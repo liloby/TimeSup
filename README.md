@@ -4,5 +4,5 @@
 
 ##### Wireframe-
 
-<img width="900" alt="image" src="https://user-images.githubusercontent.com/72634228/183244486-8c82f570-63f2-497a-bb0d-24618ef227bf.png">
+<img width="900" alt="image" src="https://user-images.githubusercontent.com/72634228/183244947-5a83a998-6110-41fd-a07d-3c36979ab86e.png">
 
