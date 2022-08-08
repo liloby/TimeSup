@@ -13,6 +13,7 @@ export default function App() {
   const [user, setUser] = useState(getUser())
   return (
     <main className="App">
+      <div className="Page-Wrapper">
       { 
         user ? 
         <>
@@ -25,6 +26,7 @@ export default function App() {
         :
         <AuthPage setUser={setUser}/>
       }
+      </div>
     </main>
   );
 }

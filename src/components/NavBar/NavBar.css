@@ -1,0 +1,27 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #92D1CD;
+    height: 4rem;
+}
+
+.Title {
+    color: #FF776F;
+    font-size: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+a:hover {
+    color: rgb(237, 123, 142);
+}
+
+.Welcome-msg {
+    color: white;
+    font-size: 1.5rem;
+}
