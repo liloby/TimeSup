@@ -5,7 +5,7 @@
 ##### Wireframe/Design-
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/72634228/183264468-3de0fdfd-9a49-4f54-9709-e1376ca201be.png">
 
-##### Logo & Expiration Hourglass
+##### Logo & Expiration Hourglass-
 <img width="468" alt="image" src="https://user-images.githubusercontent.com/72634228/183358191-b220e1cc-91e3-4d4b-827c-b90e6ad04c07.png">
 
 
