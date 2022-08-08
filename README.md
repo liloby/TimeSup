@@ -1,6 +1,6 @@
 ## TimeSup Dating App
 
-#### A Dating App that has an expiration time
+#### A Dating App that has an expiration time on every match
 
 ##### Wireframe/Design-
 
