@@ -1,8 +1,9 @@
 import { checkToken } from "../../utilities/users-service"
 import * as userService from '../../utilities/users-service'
 import ProfileForm from "../../components/ProfileForm/ProfileForm"
+import ProfileInfo from "../../components/ProfileInfo/ProfileInfo"
 
-export default function ProfilePage({user, profileItems}) {
+export default function ProfilePage({user, profileItems, addProfile}) {
 
     const currentProfile = profileItems.find(item => item.user === user._id)
 
@@ -14,9 +15,9 @@ export default function ProfilePage({user, profileItems}) {
         <div>
             <h1>Welcome, {userName}</h1>
             { currentProfile ? 
-            <h1>Already have profile</h1>
+            <ProfileInfo currentProfile={currentProfile}/>
             :
-            <ProfileForm />
+            <ProfileForm addProfile={addProfile}/>
             }
         </div>
     )

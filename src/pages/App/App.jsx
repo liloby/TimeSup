@@ -14,6 +14,7 @@ import * as profileAPI from '../../utilities/profile-api'
 export default function App() {
   const [user, setUser] = useState(getUser())
   const [profileItems, setProfileItems] = useState([])
+  
 
 
   useEffect(function() {
@@ -25,6 +26,10 @@ export default function App() {
   }, [])
   console.log(profileItems)
 
+  function addProfile(profile) {
+    setProfileItems([...profileItems, profile])
+  }
+
   return (
     <main className="App">
       <div className="Page-Wrapper">
@@ -34,7 +39,7 @@ export default function App() {
         <NavBar user={user} setUser={setUser} />
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/profile' element={<ProfilePage user={user} profileItems={profileItems}/>} />
+          <Route path='/profile' element={<ProfilePage user={user} profileItems={profileItems} addProfile={addProfile}/>} />
         </Routes>
         </>
         :
