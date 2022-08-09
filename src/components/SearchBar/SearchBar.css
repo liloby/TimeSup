@@ -1,0 +1,6 @@
+.SearchBar-items {
+    display: flex;
+    justify-content: space-evenly;
+    height: 4rem;
+    align-items: center;
+}

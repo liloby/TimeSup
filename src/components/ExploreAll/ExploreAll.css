@@ -1,0 +1,9 @@
+.ExploreAll-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+h1 {
+    text-align: center;
+}

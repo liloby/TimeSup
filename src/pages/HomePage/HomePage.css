@@ -1,0 +1,17 @@
+.Home-Wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.SearchBar {
+    grid-area: 1 / 1 / 2 / 4;
+}
+
+.ExploreAll {
+    grid-area: 2 / 1 / 6 / 4; 
+}
+
+.MatchBox {
+    grid-area: 1 / 4 / 6 / 6; 
+}

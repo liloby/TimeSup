@@ -1,7 +1,9 @@
+import "./SearchBar.css"
+
 export default function SearchBar() {
     return (
-        <div>
-            <div>
+        <div className="SearchBar" >
+            <div className="SearchBar-items">
                 <label>
                 <input type="radio" />
                     Explore
@@ -11,7 +13,7 @@ export default function SearchBar() {
                     Match
                 </label>
                 <label>
-                    Sortby:
+                    Filter:
                     <select>
                         <option value="All">All</option>
                         <option value="Age">Age</option>
