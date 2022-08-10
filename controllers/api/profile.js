@@ -12,6 +12,6 @@ async function index(req, res) {
 
 async function create(req, res) {
     const profile = await Profile.create(req.body)
-    console.log(profile)
+    console.log("You've reach controller")
     res.json(profile)
 }

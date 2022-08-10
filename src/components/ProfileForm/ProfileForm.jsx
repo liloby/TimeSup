@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { createProfile } from "../../utilities/profile-api"
 
 
-export default function ProfileForm() {
+export default function ProfileForm({user}) {
 
     const [formData, setFormData] = useState({
         displayName: '',
@@ -15,9 +15,8 @@ export default function ProfileForm() {
 })
 
     async function handleAddProfile(evt) {
-        evt.preventDefault()
-        alert(JSON.stringify(formData));
-        const profile = await createProfile(formData)
+        const updatedFormData = {...formData, user: user._id}
+        const profile = await createProfile(updatedFormData)
         console.log(profile)
     }
 
@@ -28,14 +27,15 @@ export default function ProfileForm() {
     return (
         <form className="ProfileForm" onSubmit={handleAddProfile}>
             <label>Display Name:
-                <input value={formData.displayName} onChange={handleChange} type="text" name="displayName" />
+                <input value={formData.displayName} onChange={handleChange} type="text" name="displayName" required/>
             </label>
             <label>Age:
             </label>
-                <input value={formData.age} onChange={handleChange} name="age" type="number" min="18" />
+                <input value={formData.age} onChange={handleChange} name="age" type="number" min="18" required/>
             <label>Sex:
             </label>
-                <select value={formData.sex} onChange={handleChange} name="sex">
+                <select value={formData.sex} onChange={handleChange} name="sex" required>
+                    <option >Select One</option>
                     <option value="Man">Man</option>
                     <option value="Woman">Woman</option>
                     <option value="Trans">Trans</option>
@@ -44,13 +44,13 @@ export default function ProfileForm() {
                 </select>
                 <label>Image(link):
                 </label>
-                    <textarea value={formData.image} onChange={handleChange} name="image" cols="30" rows="1"></textarea>
+                    <textarea value={formData.image} onChange={handleChange} name="image" cols="30" rows="1" required></textarea>
                 <label>Bio:
                 </label>
-                    <textarea value={formData.bio} onChange={handleChange} name="bio" cols="30" rows="3"></textarea>
+                    <textarea value={formData.bio} onChange={handleChange} name="bio" cols="30" rows="3" required></textarea>
                 <label>Hobbies(Separate Each Hobby with a Space or a Comma):
                 </label>
-                    <textarea value={formData.hobbies} onChange={handleChange} name="hobbies" cols="30" rows="2"></textarea>
+                    <textarea value={formData.hobbies} onChange={handleChange} name="hobbies" cols="30" rows="2" required></textarea>
                 <button>Create a Profile</button>
         </form>
     )

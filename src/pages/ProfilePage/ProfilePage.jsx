@@ -7,6 +7,7 @@ export default function ProfilePage({user, profileItems, addProfile}) {
 
     const currentProfile = profileItems.find(item => item.user === user._id)
 
+    console.log(currentProfile)
     console.log("userId", user._id)
 
     let userName = user.name.charAt(0).toUpperCase() + user.name.slice(1)
@@ -17,7 +18,7 @@ export default function ProfilePage({user, profileItems, addProfile}) {
             { currentProfile ? 
             <ProfileInfo currentProfile={currentProfile}/>
             :
-            <ProfileForm addProfile={addProfile}/>
+            <ProfileForm addProfile={addProfile} user={user}/>
             }
         </div>
     )

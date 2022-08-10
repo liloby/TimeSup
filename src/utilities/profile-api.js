@@ -6,5 +6,6 @@ export function getAll() {
 }
 
 export function createProfile(profileData) {
+    console.log(profileData)
     return sendRequest(`${BASE_URL}/new`, 'POST', profileData)
 }

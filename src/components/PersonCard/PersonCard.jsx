@@ -4,7 +4,7 @@ export default function PeopleCard({ person}) {
 
     return (
         <div>
-            <img width="250px" height="200px" src={person.image} alt="" />
+            <img width="250px" height="300" src={person.image} alt="" />
             <h3>{person.displayName}</h3>
             <p>Age: {person.age}</p>
             <p>Hobbies: {hobbies}</p>
