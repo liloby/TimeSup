@@ -1,17 +1,25 @@
 .Home-Wrapper {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
 }
 
 .SearchBar {
-    grid-area: 1 / 1 / 2 / 4;
+    grid-area: 1 / 1 / 2 / 8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
 .ExploreAll {
-    grid-area: 2 / 1 / 6 / 4; 
+    grid-area: 2 / 1 / 11 / 8; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .MatchBox {
-    grid-area: 1 / 4 / 6 / 6; 
+    grid-area: 1 / 8 / 11 / 11; 
+    margin: 2rem;
 }

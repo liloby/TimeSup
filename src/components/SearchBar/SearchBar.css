@@ -1,6 +1,23 @@
 .SearchBar-items {
     display: flex;
     justify-content: space-evenly;
-    height: 4rem;
     align-items: center;
+    min-height: 5rem;
+    max-height: 5rem;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #A76D6D
+}
+
+button:hover {
+    color: #FF0000;
+}
+
+.red {
+    color: #FF0000;
 }

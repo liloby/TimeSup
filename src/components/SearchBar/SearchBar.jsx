@@ -1,17 +1,11 @@
 import "./SearchBar.css"
 
-export default function SearchBar() {
+export default function SearchBar({handleRandom, getProfile, profileItems}) {
     return (
         <div className="SearchBar" >
             <div className="SearchBar-items">
-                <label>
-                <input type="radio" />
-                    Explore
-                </label>
-                <label>
-                <input type="radio" />
-                    Match
-                </label>
+                <button class={profileItems.length > 1 ? "red" : ""} onClick={getProfile}> Explore</button>
+                <button class={profileItems.length > 1 ? "" : "red"} onClick={handleRandom}> Match</button>
                 <label>
                     Filter:
                     <select>

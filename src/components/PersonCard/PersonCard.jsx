@@ -1,14 +1,22 @@
-export default function PeopleCard({ person}) {
+import "./PersonCard.css"
 
-    const hobbies = person.hobbies.replaceAll(",", " ")
+export default function PersonCard({ person}) {
+
+    let hobbies = person.hobbies.replaceAll(",", "")
+    let hobbiesArr = hobbies.split(" ")
 
     return (
-        <div>
-            <img width="250px" height="300" src={person.image} alt="" />
+        <div className="PersonCard" style={{ backgroundImage: `url(${person.image})`}}>
+            <div className="PersonCard-wrapper">
             <h3>{person.displayName}</h3>
+            <div className="Hobby">
+            {hobbiesArr.map((hobby, idx) => (
+                <p>{hobby}</p>
+                ))}
+            </div>
             <p>Age: {person.age}</p>
-            <p>Hobbies: {hobbies}</p>
             <p>Bio: {person.bio}</p>
+            </div>
         </div>
     )
 }

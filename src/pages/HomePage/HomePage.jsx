@@ -18,10 +18,23 @@ export default function HomePage() {
     }, [])
     console.log(profileItems)
 
+    async function getProfile() {
+        const profile = await profileAPI.getAll()
+        setProfileItems(profile)
+    }
+
+    function handleRandom() {
+        if (profileItems.length > 1) {
+            const randomMatch = profileItems[Math.floor(Math.random() * profileItems.length)]
+            setProfileItems(randomMatch)
+        }
+        console.log("Nothing happened")
+    }
+
 
     return (
         <div className="Home-Wrapper">
-            <SearchBar className="SearchBar" />
+            <SearchBar className="SearchBar" handleRandom={handleRandom} getProfile={getProfile} profileItems={profileItems}/>
             <ExploreAll className="ExploreAll" profileItems={profileItems} />
             <MatchBox  className="MatchBox"/>
         </div>

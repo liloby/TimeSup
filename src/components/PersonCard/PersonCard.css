@@ -1,0 +1,64 @@
+.PersonCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end;
+    height: 24rem;
+    width: 100%;
+    overflow-y: scroll;
+    background-size: cover;
+}
+
+.PersonCard::-webkit-scrollbar {
+    display: none;
+}
+
+.PersonCard * {
+    padding: 0;
+    margin: 0;
+    line-height: 3rem;
+}
+
+/* .PersonCard-img {
+    min-height: 15rem;
+    max-height: 15rem;
+    width: 100%;
+    background-size: cover;
+} */
+
+.PersonCard h3 {
+    color: #AA4949;
+}
+
+.Hobby {
+    display: flex;
+    justify-content: center;
+}
+
+.Hobby p {
+    margin: 0 .2rem;
+    padding: 0 .3rem;
+    background: #DAFDFF;
+    border-radius: 45%;
+    color: #5D447C;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    width: 3.3rem;
+}
+
+.PersonCard-wrapper {
+    background: linear-gradient(0deg, rgba(255, 207, 207, 0.8), rgba(255, 214, 214, 0.8));
+    width: 100%;
+    height: 7rem;
+    overflow: auto;
+    transition: 1s;
+}
+
+.PersonCard-wrapper:hover {
+    height: 12rem;
+    background: linear-gradient(0deg, rgba(255, 207, 207, 0.9), rgba(255, 214, 214, 0.9));
+}
+
+.PersonCard-wrapper::-webkit-scrollbar {
+    display: none;
+}

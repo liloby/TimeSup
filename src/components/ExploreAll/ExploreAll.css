@@ -1,9 +1,23 @@
 .ExploreAll-items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
+    justify-items: stretch;
+    border: 1px solid rgb(54, 167, 212);
+    overflow: auto;
+    gap: .5rem;
+    padding: 1rem;
+    overflow-y: scroll;
+}
+
+.ExploreAll-items::-webkit-scrollbar {
+    display: none;
 }
 
 h1 {
     text-align: center;
+}
+
+.Match {
+    margin: 1rem 5rem;
+    padding: 0 5rem;
 }
