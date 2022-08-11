@@ -42,7 +42,7 @@ export default function App() {
         <>
         <NavBar user={user} setUser={setUser} />
         <Routes>
-          <Route path='/' element={<HomePage currentProfile={currentProfile} />} />
+          <Route path='/' element={<HomePage currentProfile={currentProfile} setCurrentProfile={setCurrentProfile} user={user}/>} />
           <Route path='/profile' element={<ProfilePage user={user} currentProfile={currentProfile} profileItems={profileItems} addProfile={addProfile}/>} />
         </Routes>
         </>

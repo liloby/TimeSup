@@ -19,7 +19,7 @@ async function create(req, res) {
 
 async function addLike(req, res) {
     const profile = await Profile.find({user: req.user._id})
-
+    console.log("YOU'RE HERE ATLEAST")
     profile[0].likes.push(req.body)
     profile[0].save()
     res.json(profile)

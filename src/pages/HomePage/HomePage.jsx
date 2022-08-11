@@ -5,7 +5,7 @@ import ExploreAll from "../../components/ExploreAll/ExploreAll"
 import "./HomePage.css"
 import * as profileAPI from '../../utilities/profile-api'
 
-export default function HomePage({currentProfile}) {
+export default function HomePage({currentProfile, setCurrentProfile, user}) {
     const [profileItems, setProfileItems] = useState([])
 
 
@@ -21,6 +21,8 @@ export default function HomePage({currentProfile}) {
     async function getProfile() {
         const profile = await profileAPI.getAll()
         setProfileItems(profile)
+        const currentLogProfile = await profile.find(item => item.user === user._id)
+        setCurrentProfile(currentLogProfile)
     }
 
     function handleRandom() {
