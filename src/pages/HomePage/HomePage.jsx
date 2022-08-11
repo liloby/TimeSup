@@ -5,7 +5,7 @@ import ExploreAll from "../../components/ExploreAll/ExploreAll"
 import "./HomePage.css"
 import * as profileAPI from '../../utilities/profile-api'
 
-export default function HomePage() {
+export default function HomePage({currentProfile}) {
     const [profileItems, setProfileItems] = useState([])
 
 
@@ -16,7 +16,7 @@ export default function HomePage() {
         }
         getProfile()
     }, [])
-    console.log(profileItems)
+    // console.log(profileItems)
 
     async function getProfile() {
         const profile = await profileAPI.getAll()
@@ -32,10 +32,11 @@ export default function HomePage() {
     }
 
 
+
     return (
         <div className="Home-Wrapper">
             <SearchBar className="SearchBar" handleRandom={handleRandom} getProfile={getProfile} profileItems={profileItems}/>
-            <ExploreAll className="ExploreAll" profileItems={profileItems} />
+            <ExploreAll className="ExploreAll" profileItems={profileItems} currentProfile={currentProfile}/>
             <MatchBox  className="MatchBox"/>
         </div>
     )

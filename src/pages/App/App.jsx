@@ -14,17 +14,21 @@ import * as profileAPI from '../../utilities/profile-api'
 export default function App() {
   const [user, setUser] = useState(getUser())
   const [profileItems, setProfileItems] = useState([])
+  const [currentProfile, setCurrentProfile] = useState([])
   
-
 
   useEffect(function() {
       async function getProfile() {
           const profile = await profileAPI.getAll()
           setProfileItems(profile)
+          const currentLogProfile = await profile.find(item => item.user === user._id)
+          setCurrentProfile(currentLogProfile)
       }
       getProfile()
   }, [])
-  console.log(profileItems)
+  console.log("Profile Items", profileItems)
+  console.log("Current Profile", currentProfile)
+
 
   function addProfile(profile) {
     setProfileItems([...profileItems, profile])
@@ -38,8 +42,8 @@ export default function App() {
         <>
         <NavBar user={user} setUser={setUser} />
         <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/profile' element={<ProfilePage user={user} profileItems={profileItems} addProfile={addProfile}/>} />
+          <Route path='/' element={<HomePage currentProfile={currentProfile} />} />
+          <Route path='/profile' element={<ProfilePage user={user} currentProfile={currentProfile} profileItems={profileItems} addProfile={addProfile}/>} />
         </Routes>
         </>
         :

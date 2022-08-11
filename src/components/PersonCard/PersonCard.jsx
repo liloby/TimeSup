@@ -1,23 +1,54 @@
 import "./PersonCard.css"
+import { useState, useEffect } from 'react'
+import { createLikes } from "../../utilities/profile-api"
 
-export default function PersonCard({ person}) {
+export default function PersonCard({ person, currentProfile}) {
+    const [like, setLike] = useState(null)
+    const [checkLike, setCheckLike] = useState(null)
 
     let hobbies = person.hobbies.replaceAll(",", "")
     let hobbiesArr = hobbies.split(" ")
 
-    function likePerson() {
-        console.log(person.displayName)
+    useEffect(function() {
+        async function checkLike() {
+            const checkLike = await currentProfile.likes.some(like => like.name.includes(person.displayName))
+            setCheckLike(checkLike)
+        }
+        checkLike()
+    })
+    
+    async function handleLike() {
+        if (!currentProfile.likes.some(like => like.name.includes(person.displayName)) && currentProfile.displayName !== person.displayName) {
+            console.log(person.displayName)
+            const likedPerson = {...like, name: person.displayName}
+            const profileLiked = await createLikes(likedPerson)
+            console.log("profileLiked", profileLiked)
+        } else {
+            console.log(`${person.displayName} is already in your liked list`)
+        }
     }
+
+
+    
 
     return (
         <div className="PersonCard" style={{ backgroundImage: `url(${person.image})`}}>
             <div className="Heart-wrapper">
-            <button onClick={likePerson} className="Heart-btn"></button>
+            <form onSubmit={handleLike}>
+            <button className={checkLike ?
+             "Liked-Heart-btn" 
+             :
+             currentProfile.displayName === person.displayName ?
+             "Opague-Heart"
+             : 
+             "Heart-btn" }>
+            </button>
+            </form>
             </div>
             <div className="PersonCard-wrapper">
-            <h3>{person.displayName}</h3>
+            <h3 className={currentProfile.displayName === person.displayName ? "you" : "them" }>{person.displayName}</h3>
             <div className="Hobby">
-            {hobbiesArr.map((hobby, idx) => (
+            {hobbiesArr.map((hobby) => (
                 <p>{hobby}</p>
                 ))}
             </div>

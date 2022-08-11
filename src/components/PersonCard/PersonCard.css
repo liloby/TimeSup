@@ -8,11 +8,14 @@
     width: 100%;
     overflow-y: scroll;
     background-size: cover;
+    border-radius: 5px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);;
 }
 
 .PersonCard::-webkit-scrollbar {
     display: none;
 }
+
 
 .PersonCard * {
     padding: 0;
@@ -27,8 +30,12 @@
     background-size: cover;
 } */
 
-.PersonCard h3 {
+.PersonCard .them {
     color: #AA4949;
+}
+
+.you {
+    color: #00b8ac;
 }
 
 .Hobby {
@@ -69,16 +76,30 @@
     height: 50px;
     width: 50px;
     border: none;
-    opacity: 50%;
     cursor: pointer;
     margin: .5rem;
+    opacity: 50%;
 }
 
 .Heart-btn:hover {
     opacity: 100%;
 }
 
+.Liked-Heart-btn {
+    background: url(./heart.png);
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    border: none;
+    margin: .5rem;
+    opacity: 100%;
+}
+
 .Heart-wrapper {
     display: flex;
     width: 100%;
+}
+
+.Opague-Heart {
+    opacity: 0%;
 }
