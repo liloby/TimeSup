@@ -29,6 +29,13 @@ export default function App() {
   console.log("Profile Items", profileItems)
   console.log("Current Profile", currentProfile)
 
+  async function getProfile() {
+    const profile = await profileAPI.getAll()
+    setProfileItems(profile)
+    const currentLogProfile = await profile.find(item => item.user === user._id)
+    setCurrentProfile(currentLogProfile)
+}
+  
 
   function addProfile(profile) {
     setProfileItems([...profileItems, profile])
@@ -47,7 +54,7 @@ export default function App() {
         </Routes>
         </>
         :
-        <AuthPage setUser={setUser}/>
+        <AuthPage getProfile={getProfile} setUser={setUser}/>
       }
       <Footer />
       </div>

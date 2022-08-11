@@ -38,7 +38,7 @@ export default function HomePage({currentProfile, setCurrentProfile, user}) {
     return (
         <div className="Home-Wrapper">
             <SearchBar className="SearchBar" handleRandom={handleRandom} getProfile={getProfile} profileItems={profileItems}/>
-            <ExploreAll className="ExploreAll" profileItems={profileItems} currentProfile={currentProfile}/>
+            <ExploreAll className="ExploreAll" profileItems={profileItems} getProfile={getProfile} currentProfile={currentProfile}/>
             <MatchBox  className="MatchBox"/>
         </div>
     )

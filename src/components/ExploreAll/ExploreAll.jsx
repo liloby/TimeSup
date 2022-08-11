@@ -1,8 +1,13 @@
 import "./ExploreAll.css"
 import PersonCard from "../PersonCard/PersonCard"
 import RandomCard from "../RandomCard/RandomCard"
+import { useEffect } from "react"
 
-export default function ExploreAll({profileItems, currentProfile}) {
+export default function ExploreAll({profileItems, currentProfile, getProfile}) {
+    useEffect(function() {
+        getProfile()
+    }, [])
+    
     return (
         <div className="ExploreAll">
                 { profileItems.length > 1 ?
