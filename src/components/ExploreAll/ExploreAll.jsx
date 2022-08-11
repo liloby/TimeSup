@@ -10,6 +10,7 @@ export default function ExploreAll({profileItems, currentProfile, getProfile}) {
     
     return (
         <div className="ExploreAll">
+            {currentProfile ? "" : <h1>Create a Profile to Start</h1>}
                 { profileItems.length > 1 ?
                 <>
                 <div className="ExploreAll-items">

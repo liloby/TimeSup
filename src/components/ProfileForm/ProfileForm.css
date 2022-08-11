@@ -1,4 +1,27 @@
 .ProfileForm {
     display: flex;
     flex-direction: column;
+    padding: 0rem 4.5rem 4rem 4.5rem;
+    border: 1px solid black;
+    margin: 3rem 10rem;
+    line-height: 2rem;
+}
+
+.ProfileForm h4 {
+    font-size: 3rem;
+    text-align: center;
+    padding: 0;
+    margin: 2rem auto;
+}
+
+.ProfileForm button {
+    margin: 0 18rem;
+}
+
+.ProfileForm .Image-Container {
+    text-align: center;
+}
+
+.ProfileForm hr {
+    width: 100%;
 }

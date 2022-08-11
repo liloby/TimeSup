@@ -5,9 +5,13 @@ import { createLikes } from "../../utilities/profile-api"
 export default function PersonCard({ person, currentProfile, getProfile}) {
     const [like, setLike] = useState(null)
     const [checkLike, setCheckLike] = useState(null)
-    const [likeList, setLikeList] = useState(currentProfile.likes)
+    const [checkProfile, setCheckProfile] = useState(null)
+    const [likeList, setLikeList] = useState(() => {
+        if (currentProfile) {
+            return currentProfile.likes
+        }
+    })
 
-    console.log("ALL LIKES", currentProfile.likes)
 
     let hobbies = person.hobbies.replaceAll(",", "")
     let hobbiesArr = hobbies.split(" ")
@@ -17,7 +21,19 @@ export default function PersonCard({ person, currentProfile, getProfile}) {
             const checkLike = await likeList.some(like => like.name.includes(person.displayName))
             setCheckLike(checkLike)
         }
-        checkLike()
+        if (currentProfile) {
+            checkLike()
+        }
+    })
+
+    useEffect(function() {
+        async function checkProfile() {
+            const checkProfile = await currentProfile.displayName === person.displayName
+            setCheckProfile(checkProfile)
+        }
+        if (currentProfile) {
+            checkProfile()
+        }
     })
     
     async function handleLike(evt) {
@@ -46,7 +62,7 @@ export default function PersonCard({ person, currentProfile, getProfile}) {
             <button className={checkLike ?
              "Liked-Heart-btn" 
              :
-             currentProfile.displayName === person.displayName ?
+             checkProfile || !currentProfile ?
              "Opague-Heart"
              : 
              "Heart-btn" }>
@@ -54,7 +70,7 @@ export default function PersonCard({ person, currentProfile, getProfile}) {
             </form>
             </div>
             <div className="PersonCard-wrapper">
-            <h3 className={currentProfile.displayName === person.displayName ? "you" : "them" }>{person.displayName}</h3>
+            <h3 className={checkProfile ? "you" : "them" }>{person.displayName}</h3>
             <div className="Hobby">
             {hobbiesArr.map((hobby) => (
                 <p>{hobby}</p>

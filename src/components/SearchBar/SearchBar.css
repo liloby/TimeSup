@@ -23,7 +23,7 @@
     color: #FF0000;
 }
 
-select {
+.filter select {
     font-size: 1.2rem;
     text-align: center;
 }

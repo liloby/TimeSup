@@ -25,16 +25,19 @@ export default function EditProfileForm({user, currentProfile}) {
 
     return (
         <>
-        <h4>Edit Profile</h4>
         <form className="ProfileForm" onSubmit={handleAddProfile}>
-            <label>Display Name:
+        <h4>Edit Profile</h4>
+        <div className="Image-Container">
+        <img width="200px" src={formData.image} alt="" />
+        </div>
+        <hr />
+            <label>Display Name: &nbsp;
                 <input value={formData.displayName} onChange={handleChange} type="text" name="displayName" required/>
             </label>
-            <label>Age:
-            </label>
+            <label>Age: &nbsp;
                 <input value={formData.age} onChange={handleChange} name="age" type="number" min="18" required/>
-            <label>Sex:
             </label>
+            <label>Sex: &nbsp;
                 <select value={formData.sex} onChange={handleChange} name="sex" required>
                     <option >Select One</option>
                     <option value="Man">Man</option>
@@ -43,16 +46,18 @@ export default function EditProfileForm({user, currentProfile}) {
                     <option value="Non-binary">Non-binary</option>
                     <option value="Other">Other</option>
                 </select>
+            </label>
                 <label>Image(link):
                 </label>
                     <textarea value={formData.image} onChange={handleChange} name="image" cols="30" rows="1" required></textarea>
                 <label>Bio:
                 </label>
                     <textarea value={formData.bio} onChange={handleChange} name="bio" cols="30" rows="3" required></textarea>
-                <label>Hobbies(Separate Each Hobby with a Space or a Comma):
+                <label>Hobbies(Separate Each Hobby with a Space):
                 </label>
-                    <textarea value={formData.hobbies} onChange={handleChange} name="hobbies" cols="30" rows="2" required></textarea>
-                <button>Update Profile</button>
+                    <textarea maxlength="34" value={formData.hobbies} onChange={handleChange} name="hobbies" cols="30" rows="2" required></textarea>
+                    <br></br>
+                <button>Update</button>
         </form>
         </>
     )
