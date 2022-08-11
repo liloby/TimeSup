@@ -2,12 +2,12 @@ import "./PersonCard.css"
 import { useState, useEffect } from 'react'
 import { createLikes } from "../../utilities/profile-api"
 
-export default function PersonCard({ person, currentProfile}) {
+export default function PersonCard({ person, currentProfile, getProfile}) {
     const [like, setLike] = useState(null)
     const [checkLike, setCheckLike] = useState(null)
     const [likeList, setLikeList] = useState(currentProfile.likes)
 
-    console.log("ALL LIKES", likeList)
+    console.log("ALL LIKES", currentProfile.likes)
 
     let hobbies = person.hobbies.replaceAll(",", "")
     let hobbiesArr = hobbies.split(" ")
@@ -32,11 +32,12 @@ export default function PersonCard({ person, currentProfile}) {
         } else {
             console.log(`${person.displayName} is already in your liked list`)
         }
+        getProfile()
     }
 
-    function handleMatch() {
+    // function handleMatch() {
 
-    }
+    // }
 
     return (
         <div className="PersonCard" style={{ backgroundImage: `url(${person.image})`}}>
