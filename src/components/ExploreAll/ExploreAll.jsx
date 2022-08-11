@@ -14,7 +14,7 @@ export default function ExploreAll({profileItems, currentProfile, getProfile}) {
                 <>
                 <div className="ExploreAll-items">
                 {profileItems.map((person, idx) => (
-                <PersonCard person={person} key={idx} idx={idx} currentProfile={currentProfile} getProfile={getProfile}/>
+                <PersonCard person={person} key={person.id} idx={idx} currentProfile={currentProfile} getProfile={getProfile}/>
                 ))}
                 </div>
                 </>

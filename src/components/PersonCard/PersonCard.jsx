@@ -40,7 +40,7 @@ export default function PersonCard({ person, currentProfile, getProfile}) {
     // }
 
     return (
-        <div className="PersonCard" style={{ backgroundImage: `url(${person.image})`}}>
+        <div className="PersonCard" style={{ backgroundImage: `url("${person.image}")`}}>
             <div className="Heart-wrapper">
             <form onSubmit={handleLike}>
             <button className={checkLike ?

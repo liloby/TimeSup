@@ -3,7 +3,8 @@ const Profile = require('../../models/profile')
 module.exports = {
     index,
     create,
-    addLike
+    addLike,
+    update
 }
 
 async function index(req, res) {
@@ -22,5 +23,10 @@ async function addLike(req, res) {
     console.log("YOU'RE HERE ATLEAST")
     profile[0].likes.push(req.body)
     profile[0].save()
+    res.json(profile)
+}
+
+async function update(req, res) {
+    const profile = await Profile.findOneAndUpdate({user: req.user._id}, req.body)
     res.json(profile)
 }

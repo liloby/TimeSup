@@ -14,3 +14,8 @@ export function createLikes(likedPerson) {
     console.log("likedPerson", likedPerson)
     return sendRequest(`${BASE_URL}/like`, 'POST', likedPerson)
 }
+
+export function updateProfile(profileData) {
+    console.log(profileData)
+    return sendRequest(`${BASE_URL}/edit`, 'PUT', profileData)
+}
