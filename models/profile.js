@@ -15,7 +15,8 @@ const likesSchema = new Schema({
     age: Number,
     sex: {
         type: String,
-        enum: ["Man", "Woman", "Trans", "Non-binary", "Other"]
+        enum: ["Man", "Woman", "Trans", "Non-binary", "Other"],
+        required: true
     },
     image: String,
     bio: String,

@@ -4,6 +4,7 @@ nav {
     align-items: center;
     background: #92D1CD;
     height: 4rem;
+    border-radius: 3px;
 }
 
 .Title {

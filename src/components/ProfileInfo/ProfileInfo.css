@@ -1,3 +1,7 @@
 .ProfileInfo {
     text-align: center;
 }
+
+.ProfileInfo img {
+    border-radius: 10px;
+}
