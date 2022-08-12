@@ -3,14 +3,21 @@ import * as userService from '../../utilities/users-service'
 import ProfileForm from "../../components/ProfileForm/ProfileForm"
 import ProfileInfo from "../../components/ProfileInfo/ProfileInfo"
 import EditProfileForm from "../../components/EditProfileForm/EditProfileForm"
+import ConfirmDelete from "../../components/ConfirmDelete/ConfirmDelete"
 import { useState } from "react"
 
-export default function ProfilePage({user, profileItems, addProfile, currentProfile}) {
+export default function ProfilePage({user, profileItems, addProfile, currentProfile, setCurrentProfile}) {
     const [updateProfile, setUpdateProfile] = useState(false)
+    const [deleteProfile, setDeleteProfile] = useState(false)
 
     function updating() {
         setUpdateProfile(true)
         console.log("After clicking",updateProfile)
+    }
+
+    function deleting() {
+        setDeleteProfile(true)
+        console.log("After clicking delete button", deleteProfile)
     }
 
     console.log(currentProfile)
@@ -21,11 +28,14 @@ export default function ProfilePage({user, profileItems, addProfile, currentProf
     return (
         <div>
             <h1>Welcome, {userName}</h1>
-            { currentProfile && !updateProfile ? 
-            <ProfileInfo currentProfile={currentProfile} updating={updating}/>
+            { currentProfile && !updateProfile && !deleteProfile ? 
+            <ProfileInfo currentProfile={currentProfile} updating={updating} deleting={deleting} />
             :
             currentProfile && updateProfile ?
             <EditProfileForm addProfile={addProfile} user={user} currentProfile={currentProfile}/>
+            :
+            currentProfile && deleteProfile ?
+            <ConfirmDelete setDeleteProfile={setDeleteProfile} setCurrentProfile={setCurrentProfile}/>
             :
             <ProfileForm addProfile={addProfile} user={user}/>
             }

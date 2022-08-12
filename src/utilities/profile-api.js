@@ -19,3 +19,8 @@ export function updateProfile(profileData) {
     console.log(profileData)
     return sendRequest(`${BASE_URL}/edit`, 'PUT', profileData)
 }
+
+export function deleteOne() {
+    console.log("Deleting at API")
+    return sendRequest(`${BASE_URL}/delete`, 'DELETE')
+}

@@ -1,0 +1,21 @@
+.ConfirmDelete {
+    border: 1px solid black;
+    height: 30vh;
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.ConfirmDelete * {
+    text-align: center;
+}
+
+.Delete-btn {
+    color: red;
+}
+
+.ConfirmDelete .btn-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}

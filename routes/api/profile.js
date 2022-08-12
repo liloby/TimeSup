@@ -6,5 +6,6 @@ router.get('/', profileCtrl.index)
 router.post('/like', profileCtrl.addLike)
 router.post('/new', profileCtrl.create)
 router.put('/edit', profileCtrl.update)
+router.delete('/delete', profileCtrl.delete)
 
 module.exports = router;

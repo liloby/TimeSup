@@ -4,7 +4,8 @@ module.exports = {
     index,
     create,
     addLike,
-    update
+    update,
+    delete: deleteProfile
 }
 
 async function index(req, res) {
@@ -28,5 +29,10 @@ async function addLike(req, res) {
 
 async function update(req, res) {
     const profile = await Profile.findOneAndUpdate({user: req.user._id}, req.body)
+    res.json(profile)
+}
+
+async function deleteProfile(req, res) {
+    const profile = await Profile.findOneAndDelete({user: req.user._id})
     res.json(profile)
 }

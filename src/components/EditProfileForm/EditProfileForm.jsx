@@ -55,7 +55,7 @@ export default function EditProfileForm({user, currentProfile}) {
                     <textarea value={formData.bio} onChange={handleChange} name="bio" cols="30" rows="3" required></textarea>
                 <label>Hobbies(Separate Each Hobby with a Space):
                 </label>
-                    <textarea maxlength="34" value={formData.hobbies} onChange={handleChange} name="hobbies" cols="30" rows="2" required></textarea>
+                    <textarea maxLength="34" value={formData.hobbies} onChange={handleChange} name="hobbies" cols="30" rows="2" required></textarea>
                     <br></br>
                 <button>Update</button>
         </form>

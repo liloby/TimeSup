@@ -1,10 +1,13 @@
 import "./ProfileInfo.css"
 
-export default function ProfileInfo({currentProfile, updating}) {
+export default function ProfileInfo({currentProfile, updating, deleting}) {
+
+
 
     return (
         <div className="ProfileInfo">
             <button onClick={updating} >Edit Profile</button>
+            <button onClick={deleting}>Delete Profile</button>
             <h2>Current Displayed Profile</h2>
             <img width="500px" src={currentProfile.image} alt="" />
             <h3>{currentProfile.displayName}</h3>
