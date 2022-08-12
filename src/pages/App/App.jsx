@@ -8,6 +8,7 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 import * as profileAPI from '../../utilities/profile-api'
+import * as matchAPI from '../../utilities/match-api'
 
 
 
@@ -15,19 +16,19 @@ export default function App() {
   const [user, setUser] = useState(getUser())
   const [profileItems, setProfileItems] = useState([])
   const [currentProfile, setCurrentProfile] = useState([])
+
   
 
   useEffect(function() {
       async function getProfile() {
           const profile = await profileAPI.getAll()
+          console.log("THIS IS PROFILE", profile)
           setProfileItems(profile)
           const currentLogProfile = await profile.find(item => item.user === user._id)
           setCurrentProfile(currentLogProfile)
       }
       getProfile()
   }, [])
-  console.log("Profile Items", profileItems)
-  console.log("Current Profile", currentProfile)
 
   async function getProfile() {
     const profile = await profileAPI.getAll()
@@ -35,6 +36,7 @@ export default function App() {
     const currentLogProfile = await profile.find(item => item.user === user._id)
     setCurrentProfile(currentLogProfile)
 }
+
   
 
   function addProfile(profile) {
@@ -49,12 +51,12 @@ export default function App() {
         <>
         <NavBar user={user} setUser={setUser} />
         <Routes>
-          <Route path='/' element={<HomePage currentProfile={currentProfile} setCurrentProfile={setCurrentProfile} user={user}/>} />
+          <Route path='/' element={<HomePage currentProfile={currentProfile} setCurrentProfile={setCurrentProfile} user={user} profileItems={profileItems} setProfileItems={setProfileItems} getProfile={getProfile}/>} />
           <Route path='/profile' element={<ProfilePage user={user} currentProfile={currentProfile} profileItems={profileItems} addProfile={addProfile}/>} />
         </Routes>
         </>
         :
-        <AuthPage getProfile={getProfile} setUser={setUser}/>
+        <AuthPage getProfile={getProfile} setUser={setUser} />
       }
       <Footer />
       </div>

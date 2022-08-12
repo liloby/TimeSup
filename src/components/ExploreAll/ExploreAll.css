@@ -2,16 +2,21 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: stretch;
-    overflow: auto;
     gap: .5rem;
     padding: 1rem;
     height: 50rem;
     overflow-y: scroll;
+    margin: 0rem 0rem 1rem 1rem;
+    border: 2px solid #92D1CD;
+    border-radius: 10px;
+    box-shadow: 3px 4px 8px rgba(79, 153, 161, 0.401);
 }
 
 .ExploreAll-items::-webkit-scrollbar {
     display: none;
 }
+
+
 
 h1 {
     text-align: center;

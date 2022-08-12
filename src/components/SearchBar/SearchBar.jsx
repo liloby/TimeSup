@@ -7,7 +7,7 @@ export default function SearchBar({handleRandom, getProfile, profileItems}) {
                 <button className={profileItems.length > 1 ? "red btn" : "btn"} onClick={getProfile}> Explore</button>
                 <button className={profileItems.length > 1 ? "btn" : "red btn"} onClick={handleRandom}> Match</button>
                 <label className="filter">
-                    <span>Sortby:</span>
+                    <span>Filter:</span>
                     <select>
                         <option value="All">All</option>
                         <option value="Age">Age</option>

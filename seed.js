@@ -3,6 +3,7 @@ require('./config/database');
 
 const User = require('./models/user')
 const Profile = require('./models/profile')
+const Match = require('./models/match')
 
 async function seed() {
     
@@ -41,6 +42,11 @@ async function seed() {
         {
             name: 'Taylor',
             email: 'Taylor@gmail.com',
+            password: '1234',
+        },
+        {
+            name: 'Sam',
+            email: 'Sam@gmail.com',
             password: '1234',
         },
     ])
@@ -110,7 +116,18 @@ async function seed() {
             bio: "I knew you were trouble when you walked in",
             hobbies: 'Bake, Writer, Cook, Singer',
         },
+        {
+            user: user[7]._id,
+            displayName: "Sam",
+            age: 35, 
+            sex: 'Non-binary', 
+            image: 'https://i.guim.co.uk/img/media/fa44551b237e19cac6d658674bff872678da6a2a/0_189_2651_1591/master/2651.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=0a364e29f36f32e6bc0240a7e88e6870',
+            bio: "Lets do carpool karaoke!",
+            hobbies: 'Sing, Dance, Bar',
+        },
     ])
+
+    await Match.deleteMany({});
 
     console.log("profile:", profile)
     console.log('Users:',user)

@@ -1,8 +1,9 @@
 import "./PersonCard.css"
 import { useState, useEffect } from 'react'
 import { createLikes } from "../../utilities/profile-api"
+import { createMatch } from "../../utilities/match-api"
 
-export default function PersonCard({ person, currentProfile, getProfile}) {
+export default function PersonCard({ person, currentProfile, getProfile, getMatches}) {
     const [like, setLike] = useState(null)
     const [checkLike, setCheckLike] = useState(null)
     const [checkProfile, setCheckProfile] = useState(null)
@@ -35,7 +36,7 @@ export default function PersonCard({ person, currentProfile, getProfile}) {
             checkProfile()
         }
     })
-    
+
     async function handleLike(evt) {
         evt.preventDefault(evt);
         if (!currentProfile.likes.some(like => like.name.includes(person.displayName)) && currentProfile.displayName !== person.displayName) {
@@ -45,15 +46,23 @@ export default function PersonCard({ person, currentProfile, getProfile}) {
             setLikeList([...likeList, likedPerson])
             console.log(likeList)
             console.log("profileLiked", profileLiked)
+            handleMatch()
         } else {
             console.log(`${person.displayName} is already in your liked list`)
         }
-        getProfile()
     }
 
-    // function handleMatch() {
-
-    // }
+   async function handleMatch() {
+    const matchedProfiles = await person.likes.some(like => like.name.includes(currentProfile.displayName))
+        if (matchedProfiles) {
+            alert(`You and ${person.displayName} Matched!`)
+            const matchedProfiles = { users: [person._id, currentProfile._id]}
+            const createdMatch = await createMatch(matchedProfiles)
+            // Set State to show Matched Pair on Match Box
+            console.log(createdMatch)
+        }
+        getMatches()
+    }
 
     return (
         <div className="PersonCard" style={{ backgroundImage: `url("${person.image}")`}}>

@@ -3,9 +3,10 @@ import PersonCard from "../PersonCard/PersonCard"
 import RandomCard from "../RandomCard/RandomCard"
 import { useEffect } from "react"
 
-export default function ExploreAll({profileItems, currentProfile, getProfile}) {
+export default function ExploreAll({profileItems, currentProfile, getProfile, getMatches}) {
     useEffect(function() {
         getProfile()
+        getMatches()
     }, [])
     
     return (
@@ -15,7 +16,7 @@ export default function ExploreAll({profileItems, currentProfile, getProfile}) {
                 <>
                 <div className="ExploreAll-items">
                 {profileItems.map((person, idx) => (
-                <PersonCard person={person} key={person.id} idx={idx} currentProfile={currentProfile} getProfile={getProfile}/>
+                <PersonCard person={person} key={person.id} idx={idx} currentProfile={currentProfile} getProfile={getProfile} getMatches={getMatches}/>
                 ))}
                 </div>
                 </>

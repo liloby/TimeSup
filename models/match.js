@@ -11,7 +11,6 @@ const chatSchema = new Schema({
 const matchSchema = new Schema({
     users: [{ type: Schema.Types.ObjectId, ref: 'Profile', required: true}],
     chat: [chatSchema],
-    content: String,
     expiration: { type: Date, default: () => new Date(+new Date() + (7*24*60*60*1000))}
 }, {
     timestamps: true,
