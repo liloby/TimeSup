@@ -2,6 +2,7 @@ const Profile = require('../../models/profile')
 
 module.exports = {
     index,
+    getCurrentProfile,
     create,
     addLike,
     update,
@@ -9,6 +10,13 @@ module.exports = {
     addMatch,
     addMatch2
 }
+
+
+async function getCurrentProfile(req, res) {
+    const profile = await Profile.find({user: req.user._id})
+    res.json(profile)
+}
+
 
 async function index(req, res) {
     const profile = await Profile.find({})

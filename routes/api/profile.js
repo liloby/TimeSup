@@ -3,6 +3,7 @@ const router = express.Router()
 const profileCtrl = require('../../controllers/api/profile')
 
 router.get('/', profileCtrl.index)
+router.get('/profile', profileCtrl.getCurrentProfile)
 router.post('/like', profileCtrl.addLike)
 router.post('/new', profileCtrl.create)
 router.post('/add', profileCtrl.addMatch)

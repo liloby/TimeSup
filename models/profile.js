@@ -6,7 +6,7 @@ const likesSchema = new Schema({
   })
 
 const profileMatchesSchema = new Schema({
-    name: String
+    name: String,
 })
   
   const profileSchema = new Schema({

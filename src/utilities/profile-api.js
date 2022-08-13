@@ -10,6 +10,10 @@ export function createProfile(profileData) {
     return sendRequest(`${BASE_URL}/new`, 'POST', profileData)
 }
 
+export function getCurrentProfile() {
+    return sendRequest(`${BASE_URL}/profile`)
+}
+
 export function createLikes(likedPerson) {
     // console.log("likedPerson", likedPerson)
     return sendRequest(`${BASE_URL}/like`, 'POST', likedPerson)

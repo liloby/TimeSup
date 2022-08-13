@@ -3,13 +3,15 @@ import { useState, useEffect } from 'react'
 import { createLikes, addMatch, addMatch2 } from "../../utilities/profile-api"
 import { createMatch } from "../../utilities/match-api"
 
-export default function PersonCard({ person, currentProfile, getProfile }) {
+export default function PersonCard({ person, currentProfile, matches, setMatches }) {
     const [like, setLike] = useState(null)
     const [checkLike, setCheckLike] = useState(null)
     const [checkProfile, setCheckProfile] = useState(null)
     const [likeList, setLikeList] = useState(() => {
         if (currentProfile) {
             return currentProfile.likes
+        } else {
+            return []
         }
     })
 
@@ -20,7 +22,7 @@ export default function PersonCard({ person, currentProfile, getProfile }) {
     // This function is for updating like button status
     useEffect(function() {
         async function checkLike() {
-            const checkLike = await likeList.some(like => like.name.includes(person.displayName))
+            const checkLike = await currentProfile.likes.some(like => like.name.includes(person.displayName))
             setCheckLike(checkLike)
         }
         if (currentProfile) {
@@ -66,6 +68,7 @@ export default function PersonCard({ person, currentProfile, getProfile }) {
             const matchesNames = {displayName: person.displayName}
             const createdProfileMatch = await addMatch(matchesNames)
             const createdProfileMatch2 = await addMatch2(matchesNames)
+            // setMatches([...matches, ])
             // Set State to show Matched Pair on Match Box
             console.log("CREATED MATCH", createdMatch)
             console.log("CREATED PROFILE MATCH ARRAY", createdProfileMatch)

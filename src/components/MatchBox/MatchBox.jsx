@@ -1,10 +1,11 @@
 import './MatchBox.css'
-import * as matchAPI from '../../utilities/match-api'
+import * as profileAPI from '../../utilities/profile-api'
 import { useState, useEffect } from 'react'
 import MatchCard from "../MatchCard/MatchCard"
 
-export default function MatchBox({ currentProfile, profileItems, currentMatches, setCurrentProfile }) {
+export default function MatchBox({ currentProfile, profileItems, user }) {
     const [checkProfile, setCheckProfile] = useState(false)
+    const [matches, setMatches] = useState([])
 
 
 
@@ -12,11 +13,20 @@ export default function MatchBox({ currentProfile, profileItems, currentMatches,
         async function checkCurrentProfile() {
             if (currentProfile.displayName) {
                 setCheckProfile(true)
-                console.log("HELLO HOW ARE YOU")
-            } 
+            } else {
+                console.log("NO PROFILE YET")
+            }
         }
         checkCurrentProfile()
-    }, [])
+        async function getCurrentProfile() {
+            if (user.name) {
+              const myCurrentProfile = await profileAPI.getCurrentProfile();
+              setMatches(myCurrentProfile.profileMatches)
+            }
+          }
+          getCurrentProfile()
+    }, [matches, user, currentProfile])
+
 
 
     return (
@@ -24,7 +34,7 @@ export default function MatchBox({ currentProfile, profileItems, currentMatches,
             <h1>All Matches</h1>
             {checkProfile ? 
             currentProfile.profileMatches.map((match, idx) => (
-            <MatchCard profileItems={profileItems} match={match} key={idx} idx={idx} checkProfile={checkProfile}/>
+            <MatchCard profileItems={profileItems} match={match} key={match.id} idx={idx} checkProfile={checkProfile}/>
             ))
             :
             <h3>No Matches Yet</h3> 

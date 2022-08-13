@@ -22,6 +22,7 @@ export default function ProfilePage({user, addProfile, currentProfile, setCurren
 
     let userName = user.name.charAt(0).toUpperCase() + user.name.slice(1)
 
+
     return (
         <div>
             <h1>Welcome, {userName}</h1>

@@ -1,10 +1,17 @@
 import "./SearchBar.css"
+import * as profileAPI from '../../utilities/profile-api'
 
-export default function SearchBar({handleRandom, getProfile, profileItems}) {
+export default function SearchBar({handleRandom, profileItems, setProfileItems}) {
+
+    async function getAllItems() {
+        const profile = await profileAPI.getAll()
+          setProfileItems(profile)
+    }
+
     return (
         <div className="SearchBar" >
             <div className="SearchBar-items">
-                <button className={profileItems.length > 1 ? "red btn" : "btn"} onClick={getProfile}> Explore</button>
+                <button className={profileItems.length > 1 ? "red btn" : "btn"} onClick={getAllItems}> Explore</button>
                 <button className={profileItems.length > 1 ? "btn" : "red btn"} onClick={handleRandom}> Match</button>
                 <label className="filter">
                     <span>Filter:</span>
