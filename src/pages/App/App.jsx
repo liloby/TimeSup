@@ -58,7 +58,7 @@ console.log("CURRENT PROFILE IN APP PAGE", currentProfile)
       { 
         user ? 
         <>
-        <NavBar user={user} setUser={setUser} />
+        <NavBar user={user} setUser={setUser} setProfileItems={setProfileItems} setCurrentProfile={setCurrentProfile} />
         <Routes>
           <Route path='/' element={<HomePage currentProfile={currentProfile} setCurrentProfile={setCurrentProfile} user={user} profileItems={profileItems} setProfileItems={setProfileItems} getProfile={getProfile} currentMatches={currentMatches} setCurrentMatches={setCurrentMatches} />} />
           <Route path='/profile' element={<ProfilePage user={user} setCurrentProfile={setCurrentProfile} currentProfile={currentProfile} profileItems={profileItems} addProfile={addProfile}/>} />

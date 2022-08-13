@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import "./MatchCard.css"
 
 export default function MatchCard({ match, profileItems, checkProfile }) {
     const [profileMatch, setProfileMatch] = useState([])
@@ -13,14 +14,12 @@ useEffect(function() {
         }
     }
     findProfile()
-}, [])
+})
+
 
     return (
-        <div>
-            <div style={{ backgroundImage: `url("${profileMatch.image}")`}}>
-                <img width="60px"src={profileMatch.image} />
-            </div>
-            <p>{profileMatch.displayName}</p> 
+        <div className='MatchCard'>
+            
         </div>
     )
 }

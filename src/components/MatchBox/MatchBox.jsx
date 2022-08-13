@@ -6,15 +6,17 @@ import MatchCard from "../MatchCard/MatchCard"
 export default function MatchBox({ currentProfile, profileItems, currentMatches, setCurrentProfile }) {
     const [checkProfile, setCheckProfile] = useState(false)
 
+
+
     useEffect(function() {
         async function checkCurrentProfile() {
             if (currentProfile.displayName) {
                 setCheckProfile(true)
-                
+                console.log("HELLO HOW ARE YOU")
             } 
         }
         checkCurrentProfile()
-    })
+    }, [])
 
 
     return (
