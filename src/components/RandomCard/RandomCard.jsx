@@ -2,7 +2,6 @@ import "./RandomCard.css"
 
 export default function PersonCard({ person }) {
 
-
     return (
         <div className="MatchCard">
             <img className="MatchCard-img" src={person.image} alt="" />

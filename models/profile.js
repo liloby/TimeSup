@@ -4,6 +4,10 @@ const Schema = mongoose.Schema
 const likesSchema = new Schema({
     name: String
   })
+
+const profileMatchesSchema = new Schema({
+    name: String
+})
   
   const profileSchema = new Schema({
     user: {
@@ -11,7 +15,9 @@ const likesSchema = new Schema({
         ref: 'User',
         required: true,
     },
-    displayName: String,
+    displayName: {
+      type: String,
+    },
     age: Number,
     sex: {
         type: String,
@@ -21,7 +27,8 @@ const likesSchema = new Schema({
     image: String,
     bio: String,
     hobbies: String,
-    likes: [likesSchema]
+    likes: [likesSchema],
+    profileMatches: [profileMatchesSchema] 
   }, {
     timestamps: true,
   })

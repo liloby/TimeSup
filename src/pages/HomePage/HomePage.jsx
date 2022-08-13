@@ -6,65 +6,70 @@ import "./HomePage.css"
 import * as profileAPI from '../../utilities/profile-api'
 import * as matchAPI from '../../utilities/match-api'
 
-export default function HomePage({currentProfile, setCurrentProfile, user, getProfile}) {
+export default function HomePage({ user, getProfile, currentProfile, setCurrentProfile, currentMatches, setCurrentMatches}) {
     const [profileItems, setProfileItems] = useState([])
-    const [matches, setMatches] = useState([])
+    // const [allMatches, setAllMatches] = useState([])
 
 
     useEffect(function() {
         async function getProfile() {
             const profile = await profileAPI.getAll()
             setProfileItems(profile)
+            const currentLogProfile = await profile.find(item => item.user === user._id)
+            console.log(currentLogProfile, "CurrentLogProfile")
+            setCurrentProfile(currentLogProfile)
         }
         getProfile()
     }, [])
-    console.log(profileItems)
+
+    useEffect(function() {
+        async function getMatches() {
+            const matches = await matchAPI.getAll()
+            console.log("Matches after getAll fetch", matches)
+            // setAllMatches(matches)
+            const filteredMatches = await matches.filter(match => (match.user1 || match.user2 === user._id))
+            setCurrentMatches(filteredMatches)
+        }
+        getMatches()
+    }, [])
+
+
+    console.log("ALL PROFILES", profileItems)
+
+    console.log(user.name, user._id)
+
+    console.log(currentProfile, "CURRENT PROFILE")
 
     async function getProfile() {
         const profile = await profileAPI.getAll()
         setProfileItems(profile)
         const currentLogProfile = await profile.find(item => item.user === user._id)
+        console.log(currentLogProfile, "CurrentLogProfile")
         setCurrentProfile(currentLogProfile)
     }
 
-    useEffect(function() {
-        async function getMatches() {
-            const matches = await matchAPI.getAll()
-            console.log("THIS IS ALL THE MATCHES", matches)
-            // Filters the current logged in user's matches instead of returning ALL MATCHES on the App
-            const currentProfileMatches = await matches.filter(match => match.users.includes(currentProfile._id))
-            setMatches(currentProfileMatches)
-            // matchProfile()
-        }
-        getMatches()
-    }, [])
-
     async function getMatches() {
         const matches = await matchAPI.getAll()
-        console.log("THIS IS ALL THE MATCHES", matches)
-        // Filters the current logged in user's matches instead of returning ALL MATCHES on the App
-        const currentProfileMatches = await matches.filter(match => match.users.includes(currentProfile._id))
-        setMatches(currentProfileMatches)
-        // matchProfile()
+        console.log("Matches after getAll fetch", matches)
+        // setAllMatches(matches)
+        const filteredMatches = await matches.filter(match => (match.user1 || match.user2 === user._id))
+        setCurrentMatches(filteredMatches)
     }
-
-    console.log(matches,"HOMEPAGE MATCHES")
+    // console.log(allMatches, "useState matches")
+    console.log(currentMatches, "FILTERED useState MATCHES")
 
     function handleRandom() {
         if (profileItems.length > 1) {
             const randomMatch = profileItems[Math.floor(Math.random() * profileItems.length)]
             setProfileItems(randomMatch)
         }
-        console.log("Nothing happened")
     }
-
-
 
     return (
         <div className="Home-Wrapper">
             <SearchBar className="SearchBar" handleRandom={handleRandom} getProfile={getProfile} profileItems={profileItems}/>
-            <ExploreAll className="ExploreAll" profileItems={profileItems} getProfile={getProfile} currentProfile={currentProfile} getMatches={getMatches} matches={matches}/>
-            <MatchBox  className="MatchBox" currentProfile={currentProfile} profileItems={profileItems} getMatches={getMatches} matches={matches}/>
+            <ExploreAll className="ExploreAll" profileItems={profileItems} getProfile={getProfile} currentProfile={currentProfile} />
+            <MatchBox  className="MatchBox" setCurrentProfile={setCurrentProfile} currentProfile={currentProfile} profileItems={profileItems} currentMatches={currentMatches}/>
         </div>
     )
 }

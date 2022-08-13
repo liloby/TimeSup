@@ -1,0 +1,4 @@
+.MatchCard {
+    display: flex;
+    flex-direction: column;
+}

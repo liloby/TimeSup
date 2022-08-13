@@ -1,9 +1,9 @@
 import "./PersonCard.css"
 import { useState, useEffect } from 'react'
-import { createLikes } from "../../utilities/profile-api"
+import { createLikes, addMatch, addMatch2 } from "../../utilities/profile-api"
 import { createMatch } from "../../utilities/match-api"
 
-export default function PersonCard({ person, currentProfile, getProfile, getMatches}) {
+export default function PersonCard({ person, currentProfile, getProfile }) {
     const [like, setLike] = useState(null)
     const [checkLike, setCheckLike] = useState(null)
     const [checkProfile, setCheckProfile] = useState(null)
@@ -17,6 +17,7 @@ export default function PersonCard({ person, currentProfile, getProfile, getMatc
     let hobbies = person.hobbies.replaceAll(",", "")
     let hobbiesArr = hobbies.split(" ")
 
+    // This function is for updating like button status
     useEffect(function() {
         async function checkLike() {
             const checkLike = await likeList.some(like => like.name.includes(person.displayName))
@@ -39,12 +40,14 @@ export default function PersonCard({ person, currentProfile, getProfile, getMatc
 
     async function handleLike(evt) {
         evt.preventDefault(evt);
-        if (!currentProfile.likes.some(like => like.name.includes(person.displayName)) && currentProfile.displayName !== person.displayName) {
-            console.log(person.displayName)
-            const likedPerson = {...like, name: person.displayName}
+        if (!currentProfile.likes.some(like => like.name.includes(person.displayName))) {
+            // && currentProfile.displayName !== person.displayName
+            console.log("LIKED PERSON's NAME", person.displayName)
+            const likedPerson = {name: person.displayName}
             const profileLiked = await createLikes(likedPerson)
             setLikeList([...likeList, likedPerson])
-            console.log(likeList)
+            // console.log("THIS IS LIKELIST INSIDE OF HANDLELIKE",likeList)
+            // console.log("THIS IS CURRENTPROFILE LIKES", currentProfile.likes)
             console.log("profileLiked", profileLiked)
             handleMatch()
         } else {
@@ -52,17 +55,23 @@ export default function PersonCard({ person, currentProfile, getProfile, getMatc
         }
     }
 
+
    async function handleMatch() {
+    // Checks to see if the like array include each other's names
     const matchedProfiles = await person.likes.some(like => like.name.includes(currentProfile.displayName))
         if (matchedProfiles) {
             alert(`You and ${person.displayName} Matched!`)
-            const matchedProfiles = { users: [person._id, currentProfile._id]}
+            const matchedProfiles = {user1: currentProfile.user, user2: person.user}
             const createdMatch = await createMatch(matchedProfiles)
+            const matchesNames = {displayName: person.displayName}
+            const createdProfileMatch = await addMatch(matchesNames)
+            const createdProfileMatch2 = await addMatch2(matchesNames)
             // Set State to show Matched Pair on Match Box
-            console.log(createdMatch)
+            console.log("CREATED MATCH", createdMatch)
+            console.log("CREATED PROFILE MATCH ARRAY", createdProfileMatch)
         }
-        getMatches()
     }
+
 
     return (
         <div className="PersonCard" style={{ backgroundImage: `url("${person.image}")`}}>

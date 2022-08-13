@@ -2,8 +2,6 @@ import "./ProfileInfo.css"
 
 export default function ProfileInfo({currentProfile, updating, deleting}) {
 
-
-
     return (
         <div className="ProfileInfo">
             <button onClick={updating} >Edit Profile</button>

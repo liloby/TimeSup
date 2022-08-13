@@ -5,7 +5,9 @@ module.exports = {
     create,
     addLike,
     update,
-    delete: deleteProfile
+    delete: deleteProfile,
+    addMatch,
+    addMatch2
 }
 
 async function index(req, res) {
@@ -35,4 +37,24 @@ async function update(req, res) {
 async function deleteProfile(req, res) {
     const profile = await Profile.findOneAndDelete({user: req.user._id})
     res.json(profile)
+}
+
+async function addMatch(req, res) {
+    console.log("REQ BODY DISPLAY NAME", req.body.displayName)
+    const profile = await Profile.find({user: req.user._id})
+    profile[0].profileMatches.push({name: req.body.displayName})
+    profile[0].save()
+    // const profile2 = await Profile.find(req.body)
+    // console.log("THIS IS FOUND PROFILE 2", profile2)
+    // profile2[0].profileMatches.push({name: req.user.name})
+    // profile2[0].save()
+    res.json(profile)
+}
+
+async function addMatch2(req, res) {
+    const profile2 = await Profile.find(req.body)
+    console.log("THIS IS FOUND PROFILE 2", profile2)
+    profile2[0].profileMatches.push({name: req.user.name})
+    profile2[0].save()
+    res.json(profile2)
 }
