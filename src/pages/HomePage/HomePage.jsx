@@ -58,7 +58,9 @@ export default function HomePage({
         profileItems={profileItems}
         currentProfile={currentProfile}
         setCurrentProfile={setCurrentProfile}
+        setProfileItems={setProfileItems}
         user={user}
+        handleRandom={handleRandom}
       />
       <MatchBox
         className="MatchBox"

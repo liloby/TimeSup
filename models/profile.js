@@ -17,6 +17,7 @@ const profileMatchesSchema = new Schema({
     },
     displayName: {
       type: String,
+      unique: true,
     },
     age: Number,
     sex: {

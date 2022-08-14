@@ -2,19 +2,15 @@ import "./PersonCard.css"
 import { useState, useEffect } from 'react'
 import { createLikes, addMatch, addMatch2 } from "../../utilities/profile-api"
 import { createMatch } from "../../utilities/match-api"
+import * as profileAPI from "../../utilities/profile-api";
 
-export default function PersonCard({ person, currentProfile, matches, setMatches }) {
+export default function PersonCard({ person, currentProfile, matches, setMatches, setCurrentProfile }) {
     const [like, setLike] = useState(null)
     const [checkLike, setCheckLike] = useState(null)
     const [checkProfile, setCheckProfile] = useState(null)
-    const [likeList, setLikeList] = useState(() => {
-        if (currentProfile) {
-            return currentProfile.likes
-        } else {
-            return []
-        }
-    })
+    const [likeList, setLikeList] = useState(currentProfile.likes)
 
+    console.log(likeList, "THIS IS LIKE LIST")
 
     let hobbies = person.hobbies.replaceAll(",", "")
     let hobbiesArr = hobbies.split(" ")
@@ -40,6 +36,12 @@ export default function PersonCard({ person, currentProfile, matches, setMatches
         }
     })
 
+    async function getCurrentProfile() {
+          const myCurrentProfile = await profileAPI.getCurrentProfile();
+          console.log(myCurrentProfile, "MY CURRENT PROFILE");
+          setCurrentProfile(myCurrentProfile[0]);
+      }
+
     async function handleLike(evt) {
         evt.preventDefault(evt);
         if (!currentProfile.likes.some(like => like.name.includes(person.displayName))) {
@@ -47,11 +49,12 @@ export default function PersonCard({ person, currentProfile, matches, setMatches
             console.log("LIKED PERSON's NAME", person.displayName)
             const likedPerson = {name: person.displayName}
             const profileLiked = await createLikes(likedPerson)
-            setLikeList([...likeList, likedPerson])
+            setLikeList([{...likeList, likedPerson }])
             // console.log("THIS IS LIKELIST INSIDE OF HANDLELIKE",likeList)
             // console.log("THIS IS CURRENTPROFILE LIKES", currentProfile.likes)
             console.log("profileLiked", profileLiked)
             handleMatch()
+            getCurrentProfile()
         } else {
             console.log(`${person.displayName} is already in your liked list`)
         }
@@ -72,6 +75,7 @@ export default function PersonCard({ person, currentProfile, matches, setMatches
             // Set State to show Matched Pair on Match Box
             console.log("CREATED MATCH", createdMatch)
             console.log("CREATED PROFILE MATCH ARRAY", createdProfileMatch)
+            getCurrentProfile()
         }
     }
 

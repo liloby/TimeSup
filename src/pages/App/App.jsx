@@ -1,10 +1,11 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import AuthPage from "../AuthPage/AuthPage";
 import { getUser } from "../../utilities/users-service";
+import AuthPage from "../AuthPage/AuthPage";
 import HomePage from "../HomePage/HomePage";
 import ProfilePage from "../ProfilePage/ProfilePage";
+import MatchDetailPage from '../MatchDetailPage/MatchDetailPage'
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import * as profileAPI from "../../utilities/profile-api";
@@ -65,6 +66,13 @@ export default function App() {
                     setCurrentMatches={setCurrentMatches}
                   />
                 }
+              />
+              <Route
+                path="/match/:matchId"
+                element={
+                <MatchDetailPage 
+                />
+              }
               />
               <Route
                 path="/profile"

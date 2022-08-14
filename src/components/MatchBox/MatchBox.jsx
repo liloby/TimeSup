@@ -13,8 +13,9 @@ export default function MatchBox({ currentProfile, profileItems, user }) {
         async function checkCurrentProfile() {
             if (currentProfile.displayName) {
                 setCheckProfile(true)
-            } else {
-                console.log("NO PROFILE YET")
+            } 
+            if (currentProfile.profileMatches.length < 1) {
+                setCheckProfile(false)
             }
         }
         checkCurrentProfile()
