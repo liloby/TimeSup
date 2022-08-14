@@ -9,3 +9,11 @@ export function createMatch(matchData) {
     // console.log("YOU REACHED MATCH API", matchData)
     return sendRequest(`${BASE_URL}/new`, 'POST', matchData)
 }
+
+export function findMatch() {
+    return sendRequest(`${BASE_URL}/matches`)
+}
+
+export function getMatchProfile() {
+    return sendRequest(`${BASE_URL}/matches/profiles`)
+}

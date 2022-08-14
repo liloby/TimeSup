@@ -4,7 +4,10 @@ const matchCtrl = require('../../controllers/api/match')
 
 // router.get('/', matchCtrl.index)
 router.get('/', matchCtrl.index)
+router.get('/matches', matchCtrl.findMatch)
+router.get('/matches/profiles', matchCtrl.findMatchProfile)
 router.post('/new', matchCtrl.create)
+
 
 
 

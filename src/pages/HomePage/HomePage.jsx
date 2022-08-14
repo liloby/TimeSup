@@ -10,11 +10,13 @@ export default function HomePage({
   user,
   currentProfile,
   setCurrentProfile,
-  currentMatches,
-  setCurrentMatches,
 }) {
   const [profileItems, setProfileItems] = useState([]);
-  // const [allMatches, setAllMatches] = useState([])
+  const [myMatches, setMyMatches] = useState([])
+  const [matchedProfiles, setMatchedProfiles] = useState()
+
+  console.log(myMatches, "MY MATCHES FKJDSLKFJLDSKJFS")
+  console.log(matchedProfiles, "MY MATCHES PROFILESSSSSSS")
 
   useEffect(
     function () {
@@ -31,6 +33,16 @@ export default function HomePage({
         setProfileItems(profile);
       }
       getProfile();
+      async function getMatches() {
+        const myMatches = await matchAPI.findMatch()
+        setMyMatches(myMatches)
+      }
+      getMatches()
+      async function getMatchesProfile() {
+        const myMatchesProfile = await matchAPI.getMatchProfile()
+        setMatchedProfiles(myMatchesProfile)
+      }
+      getMatchesProfile()
     },
     [user]
   );
@@ -61,14 +73,13 @@ export default function HomePage({
         setProfileItems={setProfileItems}
         user={user}
         handleRandom={handleRandom}
+        setMyMatches={setMyMatches}
       />
       <MatchBox
         className="MatchBox"
         user={user}
         setCurrentProfile={setCurrentProfile}
         currentProfile={currentProfile}
-        profileItems={profileItems}
-        currentMatches={currentMatches}
       />
     </div>
   );

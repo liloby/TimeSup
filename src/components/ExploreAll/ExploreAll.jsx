@@ -11,7 +11,8 @@ export default function ExploreAll({
   user,
   setCurrentProfile,
   setProfileItems,
-  handleRandom
+  handleRandom,
+  setMyMatches
 }) {
   return (
     <div className="ExploreAll">
@@ -29,6 +30,7 @@ export default function ExploreAll({
                 currentProfile={currentProfile}
                 user={user}
                 setCurrentProfile={setCurrentProfile}
+                setMyMatches={setMyMatches}
               />
             ))}
           </div>
@@ -36,7 +38,7 @@ export default function ExploreAll({
       ) : (
         <>
           <div className="Match">
-            <RandomCard person={profileItems} setProfileItems={setProfileItems} handleRandom={handleRandom} />
+            <RandomCard person={profileItems} setProfileItems={setProfileItems} handleRandom={handleRandom}  />
           </div>
         </>
       )}

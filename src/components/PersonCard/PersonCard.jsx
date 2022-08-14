@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react'
 import { createLikes, addMatch, addMatch2 } from "../../utilities/profile-api"
 import { createMatch } from "../../utilities/match-api"
 import * as profileAPI from "../../utilities/profile-api";
+import * as matchAPI from "../../utilities/match-api";
 
-export default function PersonCard({ person, currentProfile, matches, setMatches, setCurrentProfile }) {
+export default function PersonCard({ person, currentProfile, setCurrentProfile, setMyMatches }) {
     const [like, setLike] = useState(null)
     const [checkLike, setCheckLike] = useState(null)
     const [checkProfile, setCheckProfile] = useState(null)
@@ -35,6 +36,11 @@ export default function PersonCard({ person, currentProfile, matches, setMatches
             checkProfile()
         }
     })
+
+    async function getMatches() {
+        const myMatches = await matchAPI.findMatch()
+        console.log(myMatches, "MY MATCHES FINALLY!!!!!!!")
+      }
 
     async function getCurrentProfile() {
           const myCurrentProfile = await profileAPI.getCurrentProfile();
@@ -76,6 +82,7 @@ export default function PersonCard({ person, currentProfile, matches, setMatches
             console.log("CREATED MATCH", createdMatch)
             console.log("CREATED PROFILE MATCH ARRAY", createdProfileMatch)
             getCurrentProfile()
+            getMatches()
         }
     }
 
