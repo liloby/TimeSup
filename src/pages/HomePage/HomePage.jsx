@@ -15,6 +15,7 @@ export default function HomePage({
   const [profileItems, setProfileItems] = useState([]);
   const [myMatches, setMyMatches] = useState([])
   const [matchedProfiles, setMatchedProfiles] = useState([])
+  const [masterProfileItems ,setMasterProfileItems] = useState([])
 
   console.log(myMatches, "MY MATCHES FKJDSLKFJLDSKJFS")
   console.log(matchedProfiles, "MY MATCHES PROFILESSSSSSS")
@@ -34,6 +35,7 @@ export default function HomePage({
       async function getProfile() {
         const profile = await profileAPI.getAll();
         setProfileItems(profile);
+        setMasterProfileItems(profile)
       }
       getProfile();
       // Obtain all my matches from created matches Schema
@@ -72,6 +74,14 @@ export default function HomePage({
     }
   }
 
+  function handleFilter(evt) {
+    if(evt.target.value === "All") {
+        return setProfileItems(masterProfileItems)
+    }
+    const filteredProfileItems = masterProfileItems.filter(item => item.sex === evt.target.value)
+    setProfileItems(filteredProfileItems)
+  }
+
   return (
     <div className="Home-Wrapper">
       <SearchBar
@@ -79,6 +89,7 @@ export default function HomePage({
         handleRandom={handleRandom}
         profileItems={profileItems}
         setProfileItems={setProfileItems}
+        handleFilter={handleFilter}
       />
       <ExploreAll
         className="ExploreAll"
