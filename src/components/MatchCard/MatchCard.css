@@ -1,9 +1,32 @@
-.MatchCard {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.MatchCard a div {
+    height: 70px;
+    width: 70px;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid white;
+    border-radius: 50%;
 }
 
 .MatchCard a {
-    color: black;
+    color: #6e3131;
+    display: grid;
+    grid-template-columns: .3fr .5fr .3fr;
+    align-items: center;
+    justify-items: center;
+}
+
+
+.MatchCard {
+    background: #ffc9c9;
+    margin: .3rem;
+    border-radius: 10px;
+    transition: 200ms ease-in-out;
+}
+
+.MatchCard:hover {
+    opacity: 60%;
+}
+
+.MatchCard:nth-child(even) {
+    background-color: #a0d6d2;
 }

@@ -34,7 +34,7 @@ console.log(matchedProfiles, "MATCHED PROFILES AT MATCHBOX")
         <div className='MatchBox'>
             <h1>All Matches</h1>
             {checkProfile ? 
-            currentProfile.profileMatches.map((match, idx) => (
+            matchedProfiles.map((match, idx) => (
             <MatchCard match={match} key={match.id} idx={idx} checkProfile={checkProfile}/>
             ))
             :

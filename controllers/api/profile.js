@@ -1,4 +1,5 @@
 const Profile = require('../../models/profile')
+const User = require('../../models/user')
 
 module.exports = {
     index,
@@ -25,7 +26,9 @@ async function index(req, res) {
 
 async function create(req, res) {
     const profile = await Profile.create(req.body)
-    // console.log("You've reach controller")
+    const user = await User.findOneAndUpdate({_id: req.user._id}, {profileCreated: true})
+    user.save()
+    console.log("Created profile Change user boolean to true", user)
     res.json(profile)
 }
 
@@ -44,6 +47,8 @@ async function update(req, res) {
 
 async function deleteProfile(req, res) {
     const profile = await Profile.findOneAndDelete({user: req.user._id})
+    const user = await User.findOneAndUpdate({_id: req.user._id}, {profileCreated: false})
+    user.save()
     res.json(profile)
 }
 

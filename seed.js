@@ -13,41 +13,49 @@ async function seed() {
             name: 'Shawn',
             email: 'Shawn@gmail.com',
             password: '1234',
+            profileCreated: true
         },
         {
             name: 'Ariana',
             email: 'Ariana@gmail.com',
             password: '1234',
+            profileCreated: true
         },
         {
             name: 'Simu',
             email: 'Simu@gmail.com',
             password: '1234',
+            profileCreated: true
         },
         {
             name: 'Lisa',
             email: 'Lisa@gmail.com',
             password: '1234',
+            profileCreated: true
         },
         {
             name: 'Adele',
             email: 'Adele@gmail.com',
             password: '1234',
+            profileCreated: true
         },
         {
             name: 'Fina',
             email: 'Fina@gmail.com',
             password: '1234',
+            profileCreated: true
         },
         {
             name: 'Taylor',
             email: 'Taylor@gmail.com',
             password: '1234',
+            profileCreated: true
         },
         {
             name: 'Sam',
             email: 'Sam@gmail.com',
             password: '1234',
+            profileCreated: true
         },
     ])
     

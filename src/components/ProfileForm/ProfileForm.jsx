@@ -39,7 +39,7 @@ export default function ProfileForm({user}) {
             </label>
             <label>Sex: &nbsp;
                 <select value={formData.sex} onChange={handleChange} name="sex" required>
-                    <option >Select One</option>
+                    <option value="">Select One</option>
                     <option value="Man">Man</option>
                     <option value="Woman">Woman</option>
                     <option value="Trans">Trans</option>

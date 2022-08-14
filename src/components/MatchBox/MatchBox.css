@@ -1,14 +1,17 @@
-.MatchBox-items {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .MatchBox h1 {
-    color: #AA4949;
+    color: #cf6868;
 }
 
 .MatchBox h3 {
     text-align: center;
 }
+
+.MatchBox {
+    overflow: auto;
+    /* border: 2px solid #d9aeba;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px rgba(234, 187, 187, 0.502); */
+}
+

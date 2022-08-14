@@ -5,6 +5,7 @@ import ExploreAll from "../../components/ExploreAll/ExploreAll";
 import "./HomePage.css";
 import * as profileAPI from "../../utilities/profile-api";
 import * as matchAPI from "../../utilities/match-api";
+import { getUser } from "../../utilities/users-service";
 
 export default function HomePage({
   user,
@@ -13,16 +14,16 @@ export default function HomePage({
 }) {
   const [profileItems, setProfileItems] = useState([]);
   const [myMatches, setMyMatches] = useState([])
-  const [matchedProfiles, setMatchedProfiles] = useState()
+  const [matchedProfiles, setMatchedProfiles] = useState([])
 
-//   console.log(myMatches, "MY MATCHES FKJDSLKFJLDSKJFS")
-//   console.log(matchedProfiles, "MY MATCHES PROFILESSSSSSS")
+  console.log(myMatches, "MY MATCHES FKJDSLKFJLDSKJFS")
+  console.log(matchedProfiles, "MY MATCHES PROFILESSSSSSS")
 
   useEffect(
     function () {
         // Obtain current logged in User's Profile
       async function getCurrentProfile() {
-        if (user.name) {
+        if (user.profileCreated === true) {
           const myCurrentProfile = await profileAPI.getCurrentProfile();
           console.log(myCurrentProfile, "MY CURRENT PROFILE");
           setCurrentProfile(myCurrentProfile[0]);
@@ -36,21 +37,30 @@ export default function HomePage({
       }
       getProfile();
       // Obtain all my matches from created matches Schema
-    //   async function getMatches() {
-    //     const myMatches = await matchAPI.findMatch()
-    //     setMyMatches(myMatches)
-    //   }
-    //   getMatches()
-    //   // Obtain the current profile's matches Profile
-    //   async function getMatchesProfile() {
-    //       const myMatchesProfile = await matchAPI.getMatchProfile()
-    //       setMatchedProfiles(myMatchesProfile)
-    //     }
-    //   getMatchesProfile()
+      async function getMatches() {
+        const myMatches = await matchAPI.findMatch()
+        setMyMatches(myMatches)
+      }
+      getMatches()
+      getUser()
     },
     [user]
   );
-  
+
+  useEffect(function () {
+        //   Obtain the current profile's matches Profile
+        if (user.profileCreated === true) {
+            async function getMatchesProfile() {
+                const myMatchesProfile = await matchAPI.getMatchProfile()
+                setMatchedProfiles(myMatchesProfile)
+              }
+              getMatchesProfile()
+        } else {
+            console.log("NO CURRENT PROFILE YET")
+        }
+        
+  }, [currentProfile, user])
+
 
   function handleRandom() {
     if (currentProfile) {

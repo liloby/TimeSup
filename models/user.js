@@ -19,7 +19,11 @@ const userSchema = new Schema(
       trim: true,
       minLength: 3,
       required: true,
-    }
+    },
+    profileCreated: {
+      type: Boolean, 
+      default: false
+    },
   }, {
     timestamps: true,
     toJson: {
