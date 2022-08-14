@@ -10,9 +10,11 @@ export default function PersonCard({ person, setProfileItems, handleRandom }) {
       }
 
     return (
-        <div className="MatchCard">
+        <div>
             <button onClick={shuffle} >Next</button>
-            <img className="MatchCard-img" src={person.image} alt="" />
+            <div className="background-img" style={{backgroundImage: `url(${person.image})`}}>
+
+            </div>
             <h3>{person.displayName}</h3>
             <p>{person.age}</p>
             <p>{person.hobbies}</p>
