@@ -15,11 +15,12 @@ export default function HomePage({
   const [myMatches, setMyMatches] = useState([])
   const [matchedProfiles, setMatchedProfiles] = useState()
 
-  console.log(myMatches, "MY MATCHES FKJDSLKFJLDSKJFS")
-  console.log(matchedProfiles, "MY MATCHES PROFILESSSSSSS")
+//   console.log(myMatches, "MY MATCHES FKJDSLKFJLDSKJFS")
+//   console.log(matchedProfiles, "MY MATCHES PROFILESSSSSSS")
 
   useEffect(
     function () {
+        // Obtain current logged in User's Profile
       async function getCurrentProfile() {
         if (user.name) {
           const myCurrentProfile = await profileAPI.getCurrentProfile();
@@ -28,24 +29,28 @@ export default function HomePage({
         }
       }
       getCurrentProfile();
+      // Obtain all profiles in the app
       async function getProfile() {
         const profile = await profileAPI.getAll();
         setProfileItems(profile);
       }
       getProfile();
-      async function getMatches() {
-        const myMatches = await matchAPI.findMatch()
-        setMyMatches(myMatches)
-      }
-      getMatches()
-      async function getMatchesProfile() {
-        const myMatchesProfile = await matchAPI.getMatchProfile()
-        setMatchedProfiles(myMatchesProfile)
-      }
-      getMatchesProfile()
+      // Obtain all my matches from created matches Schema
+    //   async function getMatches() {
+    //     const myMatches = await matchAPI.findMatch()
+    //     setMyMatches(myMatches)
+    //   }
+    //   getMatches()
+    //   // Obtain the current profile's matches Profile
+    //   async function getMatchesProfile() {
+    //       const myMatchesProfile = await matchAPI.getMatchProfile()
+    //       setMatchedProfiles(myMatchesProfile)
+    //     }
+    //   getMatchesProfile()
     },
     [user]
   );
+  
 
   function handleRandom() {
     if (currentProfile) {
@@ -80,6 +85,7 @@ export default function HomePage({
         user={user}
         setCurrentProfile={setCurrentProfile}
         currentProfile={currentProfile}
+        matchedProfiles={matchedProfiles}
       />
     </div>
   );

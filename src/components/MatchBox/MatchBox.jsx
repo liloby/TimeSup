@@ -3,11 +3,11 @@ import * as profileAPI from '../../utilities/profile-api'
 import { useState, useEffect } from 'react'
 import MatchCard from "../MatchCard/MatchCard"
 
-export default function MatchBox({ currentProfile, user }) {
+export default function MatchBox({ currentProfile, user, matchedProfiles }) {
     const [checkProfile, setCheckProfile] = useState(false)
     const [matches, setMatches] = useState([])
 
-
+console.log(matchedProfiles, "MATCHED PROFILES AT MATCHBOX")
 
     useEffect(function() {
         async function checkCurrentProfile() {

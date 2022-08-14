@@ -5,13 +5,10 @@ import { createMatch } from "../../utilities/match-api"
 import * as profileAPI from "../../utilities/profile-api";
 import * as matchAPI from "../../utilities/match-api";
 
-export default function PersonCard({ person, currentProfile, setCurrentProfile, setMyMatches }) {
+export default function PersonCard({ person, currentProfile, setCurrentProfile }) {
     const [like, setLike] = useState(null)
     const [checkLike, setCheckLike] = useState(null)
     const [checkProfile, setCheckProfile] = useState(null)
-    const [likeList, setLikeList] = useState(currentProfile.likes)
-
-    console.log(likeList, "THIS IS LIKE LIST")
 
     let hobbies = person.hobbies.replaceAll(",", "")
     let hobbiesArr = hobbies.split(" ")
@@ -55,9 +52,6 @@ export default function PersonCard({ person, currentProfile, setCurrentProfile, 
             console.log("LIKED PERSON's NAME", person.displayName)
             const likedPerson = {name: person.displayName}
             const profileLiked = await createLikes(likedPerson)
-            setLikeList([{...likeList, likedPerson }])
-            // console.log("THIS IS LIKELIST INSIDE OF HANDLELIKE",likeList)
-            // console.log("THIS IS CURRENTPROFILE LIKES", currentProfile.likes)
             console.log("profileLiked", profileLiked)
             handleMatch()
             getCurrentProfile()
