@@ -6,6 +6,9 @@ export default function ExpirationDays({expiration}) {
     return (
         <>
         <div className={
+            expiration <= 0 ?
+            "broken"
+            :
             expiration <= 1 ?
             "oneDay"
             :

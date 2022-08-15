@@ -2,49 +2,57 @@
     background: url(./timeHeart/7days.png);
     background-size: cover;
     background-position: center;
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
 }
 
 .sixDays {
     background: url(./timeHeart/6days.png);
     background-size: cover;
     background-position: center;
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
 }
 .fiveDays {
     background: url(./timeHeart/5days.png);
     background-size: cover;
     background-position: center;
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
 }
 .fourDays {
     background: url(./timeHeart/4days.png);
     background-size: cover;
     background-position: center;
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
 }
 .threeDays {
     background: url(./timeHeart/3days.png);
     background-size: cover;
     background-position: center;
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
 }
 .twoDays {
     background: url(./timeHeart/2days.png);
     background-size: cover;
     background-position: center;
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
 }
 .oneDay {
     background: url(./timeHeart/1day.png);
     background-size: cover;
     background-position: center;
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
 }
+.broken {
+    background: url(./timeHeart/broken.png);
+    background-size: cover;
+    background-position: center;
+    height: 90%;
+    width: 90%;
+}
+

@@ -30,7 +30,7 @@ console.log(expiration, "EXPIRATION IN DAYS")
 
   return (
     <div className="MatchCard">
-        {oneMatch ? 
+        {oneMatch && expiration > 0? 
       <Link to={`/match/${oneMatch._id}`}>
         <div className="avatar-img" style={{backgroundImage: `url(${match.image})`}}>
         </div>
@@ -38,6 +38,17 @@ console.log(expiration, "EXPIRATION IN DAYS")
         <ExpirationDays expiration={expiration}/>
       </Link>
         : 
+        oneMatch && expiration < 0 ?
+        <Link className="expired" to={`/match/${oneMatch._id}`}>
+        <div className="avatar-img-expired" style={{backgroundImage: `url(${match.image})`}}>
+        </div>
+        <h3>{match.displayName}</h3>
+        <ExpirationDays expiration={expiration}/>
+        <div className="delete-btn">
+        <button>Delete</button>
+        </div>
+        </Link>
+        :
         ""
     }
     </div>
