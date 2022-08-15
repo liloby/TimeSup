@@ -3,9 +3,10 @@ import * as profileAPI from '../../utilities/profile-api'
 import { useState, useEffect } from 'react'
 import MatchCard from "../MatchCard/MatchCard"
 
-export default function MatchBox({ currentProfile, user, matchedProfiles }) {
+export default function MatchBox({ currentProfile, user, matchedProfiles, myMatches }) {
     const [checkProfile, setCheckProfile] = useState(false)
     const [matches, setMatches] = useState([])
+    const [sortMatches, setSortMatches] = useState([])
 
 console.log(matchedProfiles, "MATCHED PROFILES AT MATCHBOX")
 
@@ -19,15 +20,9 @@ console.log(matchedProfiles, "MATCHED PROFILES AT MATCHBOX")
             }
         }
         checkCurrentProfile()
-        async function getCurrentProfile() {
-            if (user.name) {
-              const myCurrentProfile = await profileAPI.getCurrentProfile();
-              setMatches(myCurrentProfile.profileMatches)
-            }
-          }
-          getCurrentProfile()
     }, [matches, user, currentProfile])
 
+console.log(myMatches, "my current matches")
 
 
     return (
@@ -35,7 +30,7 @@ console.log(matchedProfiles, "MATCHED PROFILES AT MATCHBOX")
             <h1>All Matches</h1>
             {checkProfile ? 
             matchedProfiles.map((match, idx) => (
-            <MatchCard match={match} key={match.id} idx={idx} checkProfile={checkProfile}/>
+            <MatchCard match={match} key={match.id} idx={idx} checkProfile={checkProfile} myMatches={myMatches}/>
             ))
             :
             <h3>No Matches Yet</h3> 

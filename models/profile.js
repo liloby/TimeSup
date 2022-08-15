@@ -7,6 +7,9 @@ const likesSchema = new Schema({
 
 const profileMatchesSchema = new Schema({
     name: String,
+    avatar: String,
+}, {
+  timestamps: true,
 })
   
   const profileSchema = new Schema({

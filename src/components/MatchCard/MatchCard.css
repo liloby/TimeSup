@@ -1,4 +1,4 @@
-.MatchCard a div {
+.MatchCard a .avatar-img {
     height: 70px;
     width: 70px;
     background-position: center;
@@ -8,11 +8,15 @@
 }
 
 .MatchCard a {
-    color: #6e3131;
+    color: #ff0000;
     display: grid;
     grid-template-columns: .3fr .5fr .3fr;
     align-items: center;
     justify-items: center;
+}
+
+.MatchCard a:visited {
+    color: #6e3131
 }
 
 

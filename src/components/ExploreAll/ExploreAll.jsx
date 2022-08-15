@@ -38,7 +38,7 @@ export default function ExploreAll({
       ) : (
         <>
           <div className="Match">
-            <RandomCard person={profileItems} setProfileItems={setProfileItems} handleRandom={handleRandom}  />
+            <RandomCard person={profileItems} setProfileItems={setProfileItems} handleRandom={handleRandom} setMyMatches={setMyMatches} />
           </div>
         </>
       )}

@@ -5,7 +5,7 @@ module.exports = {
     index,
     create,
     findMatch,
-    findMatchProfile
+    findMatchProfile,
 }
 
 async function index(req, res) {

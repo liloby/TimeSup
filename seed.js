@@ -57,6 +57,12 @@ async function seed() {
             password: '1234',
             profileCreated: true
         },
+        {
+            name: 'Elliot',
+            email: 'Elliot@gmail.com',
+            password: '1234',
+            profileCreated: true
+        },
     ])
     
     await Profile.deleteMany({});
@@ -127,11 +133,20 @@ async function seed() {
         {
             user: user[7]._id,
             displayName: "Sam",
-            age: 35, 
+            age: 30, 
             sex: 'Non-binary', 
             image: 'https://iscale.iheart.com/v3/surl/aHR0cDovL2ltYWdlLmloZWFydC5jb20vaW1hZ2VzL292ZXJyaWRlLzQyMzc2Mi0zLmpwZw==?sn=eGtleWJhc2UyMDIxMTExMDph9d0b1wExvE5WiCXvbxf2ni5QwdILqJpLUvq7Z6HQUw%3D%3D&surrogate=1cOXl179JY-syhxYSCX6Q1a_Mcu6UO8d-F4oJzpZf1hcUbJr4aIhxtIOF0X7jx4DdRUHutC-iuklAbEetl8QIMlft5P25a6CSqih4bfyJs-CJhPbRdv8Ip1-jZTErZpjWiDZ0nHjPzecR4uhJurGNh4eTqy6EEFRjwG97yO7xIPo2NNTLPOZG4u1StNdF1xg0zAmoXA_',
             bio: "Lets do carpool karaoke!",
             hobbies: 'Sing, Dance, Bar',
+        },
+        {
+            user: user[8]._id,
+            displayName: "Elliot",
+            age: 35, 
+            sex: 'Non-binary', 
+            image: 'https://image.tmdb.org/t/p/original/3gVm1jSZERNTCKqtgXRC0J3COtn.jpg',
+            bio: "Who wants to go on a hike?",
+            hobbies: 'Acting, Hulu, Soccer',
         },
     ])
 

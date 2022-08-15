@@ -9,7 +9,7 @@
 }
 
 .MatchBox {
-    overflow: auto;
+    overflow-y: auto;
     /* border: 2px solid #d9aeba;
     border-radius: 10px;
     box-shadow: 4px 4px 5px rgba(234, 187, 187, 0.502); */

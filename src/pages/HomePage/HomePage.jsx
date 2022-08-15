@@ -107,6 +107,7 @@ export default function HomePage({
         setCurrentProfile={setCurrentProfile}
         currentProfile={currentProfile}
         matchedProfiles={matchedProfiles}
+        myMatches={myMatches}
       />
     </div>
   );

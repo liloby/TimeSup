@@ -55,7 +55,7 @@ async function deleteProfile(req, res) {
 async function addMatch(req, res) {
     console.log("REQ BODY DISPLAY NAME", req.body.displayName)
     const profile = await Profile.find({user: req.user._id})
-    profile[0].profileMatches.push({name: req.body.displayName})
+    profile[0].profileMatches.push({name: req.body.displayName, avatar: req.body.image})
     profile[0].save()
     res.json(profile)
 }
@@ -65,7 +65,7 @@ async function addMatch2(req, res) {
     console.log(profile1, "PROFILE1 INFO!!!!!!!!!!!!!")
     const profile2 = await Profile.find(req.body)
     console.log("THIS IS FOUND PROFILE 2", profile2)
-    profile2[0].profileMatches.push({name: profile1[0].displayName})
+    profile2[0].profileMatches.push({name: profile1[0].displayName, avatar: profile1[0].image})
     profile2[0].save()
     res.json(profile2)
 }
