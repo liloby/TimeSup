@@ -1,0 +1,43 @@
+.Popup {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: linear-gradient(90deg, rgba(237, 123, 142, .9), rgba(200, 200, 200, .9)) ;
+    margin-top: -239px;  
+    margin-left: -194px;
+    animation: fade 1.5s linear forwards;
+}
+
+.HidePopup {
+    opacity: 0%;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0%
+    }
+}
+
+.Popup button {
+    width: 20%;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.Popup button:hover {
+    color:#71fdf4;
+}
+
+.Popup h1 {
+    color: #ff0000;
+}

@@ -1,7 +1,8 @@
 import "./ExploreAll.css";
+import { useEffect, useState } from "react";
 import PersonCard from "../PersonCard/PersonCard";
 import RandomCard from "../RandomCard/RandomCard";
-import { useEffect } from "react";
+import PopupCard from "../PopupCard/PopupCard"
 
 export default function ExploreAll({
   profileItems,
@@ -14,8 +15,15 @@ export default function ExploreAll({
   handleRandom,
   setMyMatches
 }) {
+    const [showPopup, setShowPopup] = useState(false)
+
   return (
     <div className="ExploreAll">
+        {showPopup ? 
+        <PopupCard setShowPopup={setShowPopup} showPopup={showPopup}/>
+        :
+        ""
+        }
       {currentProfile ? "" : <h1>Create a Profile to Start</h1>}
       {profileItems.length > 1 ? (
         <>
@@ -31,6 +39,7 @@ export default function ExploreAll({
                 user={user}
                 setCurrentProfile={setCurrentProfile}
                 setMyMatches={setMyMatches}
+                setShowPopup={setShowPopup}
               />
             ))}
           </div>

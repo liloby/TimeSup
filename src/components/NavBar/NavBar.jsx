@@ -21,7 +21,10 @@ export default function NavBar({ user, setUser, setCurrentProfile, setProfileIte
     return (
     <nav>
         <Link to="/profile">Profile</Link>
-        <Link onClick={handleGetProfile} className="Title" to="/">TimeSup</Link>
+        <Link onClick={handleGetProfile} className="Title" to="/">
+        <div className="T">TimeSup</div>
+        <div className='Logo'></div>
+        </Link>
         <Link onClick={handleLogOut} to="">Log Out</Link>
     </nav>
     )

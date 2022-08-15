@@ -1,5 +1,7 @@
 .ConfirmDelete {
-    border: 1px solid black;
+    border: 2px solid #92D1CD;
+    border-radius: 10px;
+    box-shadow: 3px 4px 8px rgb(79 153 161 / 40%);
     height: 30vh;
     margin: 5rem;
     display: flex;

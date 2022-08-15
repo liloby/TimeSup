@@ -10,9 +10,9 @@ export default function PersonCard({ person, setProfileItems, handleRandom }) {
       >
       <div className="random-info-wrapper">
         <h3>{person.displayName}</h3>
-        <p>{person.hobbies}</p>
-        <p>{person.age}</p>
-        <p>{person.bio}</p>
+        <p>Hobbies: {person.hobbies}</p>
+        <p>Age: {person.age}</p>
+        <p>Bio: {person.bio}</p>
       </div>
     </div>
     </div>

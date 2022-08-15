@@ -9,11 +9,13 @@ export default function PersonCard({
   person,
   currentProfile,
   setCurrentProfile,
-  setMyMatches
+  setMyMatches,
+  setShowPopup
 }) {
   const [like, setLike] = useState(null);
   const [checkLike, setCheckLike] = useState(null);
   const [checkProfile, setCheckProfile] = useState(null);
+
 
   let hobbies = person.hobbies.replaceAll(",", "");
   let hobbiesArr = hobbies.split(" ");
@@ -79,7 +81,7 @@ export default function PersonCard({
       like.name.includes(currentProfile.displayName)
     );
     if (matchedProfiles) {
-      alert(`You and ${person.displayName} Matched!`);
+        setShowPopup(true)
       const matchedProfiles = {
         user1: currentProfile.user,
         user2: person.user,

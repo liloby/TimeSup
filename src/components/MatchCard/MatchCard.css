@@ -16,7 +16,7 @@
 }
 
 .MatchCard a:visited, .MatchCard .a:visited {
-    color: #6e3131
+    color: white;
 }
 
 
@@ -24,11 +24,19 @@
     background: #ffc9c9;
     margin: .3rem;
     border-radius: 10px;
-    transition: 200ms ease-in-out;
+    animation: slide 1s linear forwards;
+}
+
+@keyframes slide {
+    0% {
+        transform: translate(0, -100%);
+        opacity: 0%;
+    }
 }
 
 .MatchCard:hover {
     opacity: 60%;
+    transition: 200ms ease-in-out;
 }
 
 .MatchCard:nth-child(even) {
