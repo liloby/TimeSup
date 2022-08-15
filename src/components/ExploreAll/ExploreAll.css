@@ -8,7 +8,7 @@
     overflow-y: scroll;
     margin: 0rem 0rem 1rem 1rem;
     border: 2px solid #92D1CD;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 3px 4px 8px rgba(79, 153, 161, 0.401);
 }
 
@@ -26,7 +26,7 @@ h1 {
     margin: 0rem 0rem 1rem 1rem;
     padding: 2.56rem;
     border: 2px solid #92D1CD;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 3px 4px 8px rgba(79, 153, 161, 0.401);
     display: flex;
     justify-content: center;
