@@ -12,11 +12,13 @@ console.log(matchedProfiles, "MATCHED PROFILES AT MATCHBOX")
 
     useEffect(function() {
         async function checkCurrentProfile() {
-            if (currentProfile.displayName) {
-                setCheckProfile(true)
-            } 
-            if (currentProfile.profileMatches.length < 1) {
-                setCheckProfile(false)
+            if (user.profileCreated === true) {
+                if (currentProfile.displayName) {
+                    setCheckProfile(true)
+                } 
+                if (currentProfile.profileMatches.length < 1) {
+                    setCheckProfile(false)
+                }
             }
         }
         checkCurrentProfile()

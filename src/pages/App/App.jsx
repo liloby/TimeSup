@@ -16,6 +16,7 @@ export default function App() {
   const [profileItems, setProfileItems] = useState([]);
   const [currentProfile, setCurrentProfile] = useState();
   const [currentMatches, setCurrentMatches] = useState([]);
+  const [createdProfile, setCreatedProfile] = useState(null)
 
   useEffect(
     function () {
@@ -24,6 +25,7 @@ export default function App() {
           const myCurrentProfile = await profileAPI.getCurrentProfile();
           console.log(myCurrentProfile, "MY CURRENT PROFILE");
           setCurrentProfile(myCurrentProfile[0]);
+          setCreatedProfile(true)
         }
       }
       getCurrentProfile();
@@ -64,6 +66,7 @@ export default function App() {
                     setProfileItems={setProfileItems}
                     currentMatches={currentMatches}
                     setCurrentMatches={setCurrentMatches}
+                    createdProfile={createdProfile}
                   />
                 }
               />
@@ -83,6 +86,7 @@ export default function App() {
                     currentProfile={currentProfile}
                     profileItems={profileItems}
                     addProfile={addProfile}
+                    setCreatedProfile={setCreatedProfile}
                   />
                 }
               />

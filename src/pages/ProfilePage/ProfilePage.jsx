@@ -6,7 +6,7 @@ import EditProfileForm from "../../components/EditProfileForm/EditProfileForm"
 import ConfirmDelete from "../../components/ConfirmDelete/ConfirmDelete"
 import { useState } from "react"
 
-export default function ProfilePage({user, addProfile, currentProfile, setCurrentProfile}) {
+export default function ProfilePage({user, addProfile, currentProfile, setCurrentProfile, setCreatedProfile}) {
     const [updateProfile, setUpdateProfile] = useState(false)
     const [deleteProfile, setDeleteProfile] = useState(false)
 
@@ -34,7 +34,7 @@ export default function ProfilePage({user, addProfile, currentProfile, setCurren
             <EditProfileForm addProfile={addProfile} user={user} currentProfile={currentProfile}/>
             :
             currentProfile && deleteProfile ?
-            <ConfirmDelete setDeleteProfile={setDeleteProfile} setCurrentProfile={setCurrentProfile}/>
+            <ConfirmDelete setDeleteProfile={setDeleteProfile} setCurrentProfile={setCurrentProfile} setCreatedProfile={setCreatedProfile} />
             :
             <ProfileForm addProfile={addProfile} user={user}/>
             }

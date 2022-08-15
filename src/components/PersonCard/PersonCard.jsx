@@ -15,10 +15,17 @@ export default function PersonCard({
   const [like, setLike] = useState(null);
   const [checkLike, setCheckLike] = useState(null);
   const [checkProfile, setCheckProfile] = useState(null);
+  const [hobbies, setHobbies] = useState([])
 
 
-  let hobbies = person.hobbies.replaceAll(",", "");
-  let hobbiesArr = hobbies.split(" ");
+  useEffect(function () {
+    async function getHobbies() {
+        const hobbies = person.hobbies.replaceAll(",", "");
+        const hobbiesArr = hobbies.split(" ");
+        setHobbies(hobbiesArr)
+    }
+    getHobbies()
+  }, [])
 
   // This function is for updating like button status
   useEffect(function () {
@@ -120,7 +127,7 @@ export default function PersonCard({
       <div className="PersonCard-wrapper">
         <h3 className={checkProfile ? "you" : "them"}>{person.displayName}</h3>
         <div className="Hobby">
-          {hobbiesArr.map((hobby) => (
+          {hobbies.map((hobby) => (
             <p>{hobby}</p>
           ))}
         </div>

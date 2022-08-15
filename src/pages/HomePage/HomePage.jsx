@@ -11,11 +11,13 @@ export default function HomePage({
   user,
   currentProfile,
   setCurrentProfile,
+  createdProfile
 }) {
   const [profileItems, setProfileItems] = useState([]);
   const [myMatches, setMyMatches] = useState([])
   const [matchedProfiles, setMatchedProfiles] = useState([])
   const [masterProfileItems ,setMasterProfileItems] = useState([])
+  const [theirProfiles, setTheirProfiles] = useState([])
 
   console.log(myMatches, "MY MATCHES FKJDSLKFJLDSKJFS")
   console.log(matchedProfiles, "MY MATCHES PROFILESSSSSSS")
@@ -24,7 +26,7 @@ export default function HomePage({
     function () {
         // Obtain current logged in User's Profile
       async function getCurrentProfile() {
-        if (user.profileCreated === true) {
+        if (user.profileCreated === true && createdProfile === true) {
           const myCurrentProfile = await profileAPI.getCurrentProfile();
           console.log(myCurrentProfile, "MY CURRENT PROFILE");
           setCurrentProfile(myCurrentProfile[0]);
@@ -33,7 +35,11 @@ export default function HomePage({
       getCurrentProfile();
       // Obtain all profiles in the app
       async function getProfile() {
-        const profile = await profileAPI.getAll();
+          const profile = await profileAPI.getAll();
+          if (user.profileCreated === true && createdProfile === true) {
+        const theirProfiles = profile.filter(p => p.displayName !== currentProfile.displayName)
+        setTheirProfiles(theirProfiles)
+        }
         setProfileItems(profile);
         setMasterProfileItems(profile)
       }
@@ -51,7 +57,7 @@ export default function HomePage({
 
   useEffect(function () {
         //   Obtain the current profile's matches Profile
-        if (user.profileCreated === true) {
+        if (user.profileCreated === true && createdProfile === true) {
             async function getMatchesProfile() {
                 const myMatchesProfile = await matchAPI.getMatchProfile()
                 setMatchedProfiles(myMatchesProfile)

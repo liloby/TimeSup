@@ -14,7 +14,7 @@
 .random-info-wrapper {
     background: linear-gradient(0deg, rgba(255, 207, 207, 0.8), rgba(255, 214, 214, 0.8));
     border-radius: 0 0 10px 10px;
-    height: 3.5rem;
+    height: 4.2rem;
     width: 100%;
     overflow-y: scroll;
     transition: 1s;
@@ -27,9 +27,16 @@
 
 .random-info-wrapper:hover {
     background: linear-gradient(0deg, rgba(255, 207, 207, 0.9), rgba(255, 214, 214, 0.9));
-    height: 10rem;
+    height: 14rem;
 }
 
 .random-info-wrapper h3 {
     color: #AA4949;
+    font-size: 2rem;
+    padding: 0;
+    margin: 1rem;
+}
+
+.random-info-wrapper .Hobby p{
+    padding: 1rem;
 }

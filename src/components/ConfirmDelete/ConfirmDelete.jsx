@@ -1,7 +1,8 @@
 import "./ConfirmDelete.css";
 import { deleteOne } from "../../utilities/profile-api"
+import { getUser } from "../../utilities/users-service";
 
-export default function ConfirmDelete({setDeleteProfile, setCurrentProfile}) {
+export default function ConfirmDelete({setDeleteProfile, setCurrentProfile, setCreatedProfile}) {
 
     function dontDelete() {
         setDeleteProfile(false)
@@ -11,6 +12,7 @@ export default function ConfirmDelete({setDeleteProfile, setCurrentProfile}) {
         await deleteOne()
         setDeleteProfile(false)
         setCurrentProfile(null)
+        setCreatedProfile(false)
     }
 
   return (
