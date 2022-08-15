@@ -13,7 +13,8 @@ export default function ExploreAll({
   setCurrentProfile,
   setProfileItems,
   handleRandom,
-  setMyMatches
+  setMyMatches,
+  createdProfile
 }) {
     const [showPopup, setShowPopup] = useState(false)
 
@@ -40,6 +41,7 @@ export default function ExploreAll({
                 setCurrentProfile={setCurrentProfile}
                 setMyMatches={setMyMatches}
                 setShowPopup={setShowPopup}
+                createdProfile={createdProfile}
               />
             ))}
           </div>

@@ -10,13 +10,14 @@ export default function PersonCard({
   currentProfile,
   setCurrentProfile,
   setMyMatches,
-  setShowPopup
+  setShowPopup,
+  createdProfile,
+  user
 }) {
   const [like, setLike] = useState(null);
   const [checkLike, setCheckLike] = useState(null);
   const [checkProfile, setCheckProfile] = useState(null);
   const [hobbies, setHobbies] = useState([])
-
 
   useEffect(function () {
     async function getHobbies() {
@@ -29,26 +30,26 @@ export default function PersonCard({
 
   // This function is for updating like button status
   useEffect(function () {
-    async function checkLike() {
-      const checkLike = await currentProfile.likes.some((like) =>
-        like.name.includes(person.displayName)
-      );
-      setCheckLike(checkLike);
-    }
-    if (currentProfile) {
-      checkLike();
-    }
+        if (user.profileCreated === true) {
+            checkLikeFunc();
+        }
   });
 
+  async function checkLikeFunc() {
+    const checkLike = await currentProfile.likes.some((like) => like.name.includes(person.displayName))
+    setCheckLike(checkLike);
+  }
+
+  
   useEffect(function () {
+      if (currentProfile) {
     async function checkProfile() {
       const checkProfile =
         (await currentProfile.displayName) === person.displayName;
       setCheckProfile(checkProfile);
     }
-    if (currentProfile) {
-      checkProfile();
-    }
+    checkProfile();
+}
   });
 
   async function getMatches() {

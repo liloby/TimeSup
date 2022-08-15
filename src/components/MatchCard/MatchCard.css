@@ -24,7 +24,7 @@
     background: #ffc9c9;
     margin: .3rem;
     border-radius: 10px;
-    animation: slide 1s linear forwards;
+    animation: slide 1.5s linear forwards;
 }
 
 @keyframes slide {

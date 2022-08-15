@@ -55,9 +55,11 @@ export default function HomePage({
     [user]
   );
 
+console.log(theirProfiles, "NOT MY PROFILESSSS")
+
   useEffect(function () {
         //   Obtain the current profile's matches Profile
-        if (user.profileCreated === true && createdProfile === true) {
+        if (user.profileCreated === true) {
             async function getMatchesProfile() {
                 const myMatchesProfile = await matchAPI.getMatchProfile()
                 setMatchedProfiles(myMatchesProfile)
@@ -106,6 +108,7 @@ export default function HomePage({
         user={user}
         handleRandom={handleRandom}
         setMyMatches={setMyMatches}
+        createdProfile={createdProfile}
       />
       <MatchBox
         className="MatchBox"
@@ -114,6 +117,7 @@ export default function HomePage({
         currentProfile={currentProfile}
         matchedProfiles={matchedProfiles}
         myMatches={myMatches}
+        createdProfile={createdProfile}
       />
     </div>
   );

@@ -21,11 +21,13 @@ export default function App() {
   useEffect(
     function () {
       async function getCurrentProfile() {
-        if (user.name) {
+        if (user) {
           const myCurrentProfile = await profileAPI.getCurrentProfile();
+          if (myCurrentProfile.displayName) {
+            setCreatedProfile(true)
+          }
           console.log(myCurrentProfile, "MY CURRENT PROFILE");
           setCurrentProfile(myCurrentProfile[0]);
-          setCreatedProfile(true)
         }
       }
       getCurrentProfile();
