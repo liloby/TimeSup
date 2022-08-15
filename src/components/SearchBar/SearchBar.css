@@ -13,6 +13,7 @@
     font-size: 2rem;
     color: #A76D6D;
     width: 100%;
+    font-style: italic;
 }
 
 .btn:hover {
@@ -24,8 +25,12 @@
 }
 
 .filter select {
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
+    font-style: italic;
+    color: #000000;
+    border: 2px solid black;
+    margin: 0 .3rem;
 }
 
 .filter {
@@ -35,4 +40,5 @@ margin-right: 1rem;
 width: 100%;
 display: flex;
 justify-content: center;
+font-style: italic;
 }

@@ -16,12 +16,14 @@ nav {
     align-items: center;
     color: #FF776F;
     font-size: 2.5rem;
+    font-style: italic;
 }
 
-a {
+nav a {
     text-decoration: none;
     color: white;
     font-size: 1.5rem;
+    font-style: italic;
 }
 
 a:hover {
@@ -31,6 +33,7 @@ a:hover {
 .Welcome-msg {
     color: white;
     font-size: 1.5rem;
+    font-style: italic;
 }
 
 .Logo {

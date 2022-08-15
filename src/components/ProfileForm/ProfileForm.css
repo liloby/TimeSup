@@ -1,23 +1,41 @@
 .ProfileForm {
     display: flex;
     flex-direction: column;
-    padding: 0rem 4.5rem 4rem 4.5rem;
-    margin: 3rem 10rem;
+    padding: 2rem 5.5rem 4rem 5.5rem;
+    margin: 3rem 15rem;
     line-height: 2rem;
     border: 2px solid #92D1CD;
     border-radius: 10px;
     box-shadow: 3px 4px 8px rgba(79, 153, 161, 0.401);
+    background: linear-gradient(180deg, rgba(233, 252, 255, 0.5), rgba(238, 255, 255, 0.5));
 }
 
 .ProfileForm h4 {
     font-size: 3rem;
     text-align: center;
-    padding-top: 1rem;
+    padding: 1rem;
     margin: 2rem 0 1rem 0;
+    background: rgb(0, 206, 179);
+    color: white;
+    border: 2px solid rgb(0, 206, 179);
+    border-radius: 5px;
+    font-style: italic;
 }
 
 .ProfileForm button {
-    margin: 0 18rem;
+    border: none;
+    background: rgb(0, 206, 179);
+    padding: .5rem;
+    cursor: pointer;
+    margin: 0 5rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    color: white;
+    font-style: italic;
+}
+
+.ProfileForm button:hover {
+    opacity: 50%;
 }
 
 .ProfileForm .Image-Container {
@@ -30,6 +48,9 @@
 
 .ProfileForm hr {
     width: 100%;
-    height: 1px;
-    background-color: #92D1CD;
+}
+
+input, select, textarea {
+    border: 2px solid rgb(0, 206, 179);
+    border-radius: 5px;
 }

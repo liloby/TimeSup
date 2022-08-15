@@ -32,12 +32,13 @@ export default function ProfileForm({user}) {
             </div>
             <hr />
             <label>Display Name: &nbsp;
+            </label>
                 <input value={formData.displayName} onChange={handleChange} type="text" name="displayName" required/>
-            </label>
             <label>Age: &nbsp;
-                <input value={formData.age} onChange={handleChange} name="age" type="number" min="18" required/>
             </label>
+                <input value={formData.age} onChange={handleChange} name="age" type="number" min="18" required/>
             <label>Sex: &nbsp;
+            </label>
                 <select value={formData.sex} onChange={handleChange} name="sex" required>
                     <option value="">Select One</option>
                     <option value="Man">Man</option>
@@ -46,7 +47,6 @@ export default function ProfileForm({user}) {
                     <option value="Non-binary">Non-binary</option>
                     <option value="Other">Other</option>
                 </select>
-            </label>
                 <label>Image(link):
                 </label>
                     <textarea value={formData.image} onChange={handleChange} name="image" cols="30" rows="1" required></textarea>

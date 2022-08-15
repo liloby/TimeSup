@@ -35,7 +35,7 @@ console.log(myMatches, "my current matches")
             <MatchCard match={match} key={match.id} idx={idx} checkProfile={checkProfile} myMatches={myMatches}/>
             ))
             :
-            <h3>No Matches Yet</h3> 
+            <h3 className="no-match">No Matches Yet</h3> 
         }
         </div>
     )

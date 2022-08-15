@@ -33,10 +33,12 @@
 
 .PersonCard .them {
     color: #AA4949;
+    font-size: 1.35rem;
 }
 
 .you {
     color: #00b8ac;
+    font-size: 1.35rem;
 }
 
 .Hobby {

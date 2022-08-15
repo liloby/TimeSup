@@ -1,4 +1,5 @@
 import "./ExploreAll.css";
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import PersonCard from "../PersonCard/PersonCard";
 import RandomCard from "../RandomCard/RandomCard";
@@ -25,7 +26,7 @@ export default function ExploreAll({
         :
         ""
         }
-      {currentProfile ? "" : <h1>Create a Profile to Start</h1>}
+      {currentProfile ? "" : <Link className="CreateProfile" to="/profile">Create a Profile to Start</Link>}
       {profileItems.length > 1 ? (
         <>
           <div className="ExploreAll-items">

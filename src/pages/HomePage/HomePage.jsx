@@ -110,6 +110,7 @@ console.log(theirProfiles, "NOT MY PROFILESSSS")
         setMyMatches={setMyMatches}
         createdProfile={createdProfile}
       />
+      {currentProfile ?
       <MatchBox
         className="MatchBox"
         user={user}
@@ -119,6 +120,9 @@ console.log(theirProfiles, "NOT MY PROFILESSSS")
         myMatches={myMatches}
         createdProfile={createdProfile}
       />
+      :
+      ""
+    }
     </div>
   );
 }

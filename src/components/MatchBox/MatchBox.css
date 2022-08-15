@@ -2,10 +2,12 @@
 
 .MatchBox h1 {
     color: #cf6868;
+    font-style: italic;
 }
 
-.MatchBox h3 {
+.MatchBox .no-match {
     text-align: center;
+    color: #a21313
 }
 
 .MatchBox {

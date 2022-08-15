@@ -20,7 +20,7 @@ export default function ConfirmDelete({setDeleteProfile, setCurrentProfile, setC
       <h2>Are you sure you want to delete your current Profile?</h2>
       <div className="btn-wrapper">
         <button onClick={deleteProfile} className="Delete-btn">Yes</button>
-        <button onClick={dontDelete}>No</button>
+        <button className="cancel-btn" onClick={dontDelete}>No</button>
       </div>
     </div>
   );
