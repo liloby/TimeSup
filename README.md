@@ -2,20 +2,22 @@
 
 #### TimeSup is a Dating App that has an expiration time on every match. It allows users to chat and connect. With a timer set on every match, it may result in users connecting more efficiently. The app also allow users who are no longer interested in each other to just let it expire without having to worry about blocking or ignoring each other.
 
-##### Wireframe/Design-
+#### Click Link to Start - https://timesupdateapp.herokuapp.com/
+
+##### Wireframe/Design -
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/72634228/183264468-3de0fdfd-9a49-4f54-9709-e1376ca201be.png">
 
-##### Logo & Expiration Hourglass-
+##### Logo & Expiration Hourglass -
 <img width="450" alt="image" src="https://user-images.githubusercontent.com/72634228/183358429-71de6e03-6ac6-4af4-8d46-108f2125228b.png">
 
 
-##### ERD/Data Models- 
+##### ERD/Data Models - 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/72634228/183278374-94eb42ff-fbe8-4c61-a152-acf7c7d5113a.png">
 
-##### Trello Board- 
+##### Trello Board - 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/72634228/183279009-cffea04e-7203-4182-8fd0-355a6684996a.png">
 
-## Final Product-
+## Final Product -
 
 ##### Home Page
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/72634228/184870378-8aff2bce-005a-41e1-b2d8-bcce83c1a4fc.png">
