@@ -22,19 +22,9 @@ export default function ChatBox({ matchId , matchInfo, setMatchInfo }) {
         }
         getCurrentMatch()
     }, [])
-    // async function getMyMessages() {
-    //     const myMessages = await matchInfo.matchInfo.chat.filter(c => c.user === matchInfo.myProfile._id)
-    //     setMyMessages(myMessages)
-    // }
-    // getMyMessages()
-    // async function getTheirMessages() {
-    //     const theirMessages = await matchInfo.matchInfo.chat.filter(c => c.user === matchInfo.theirProfile._id)
-    //     setTheirMessages(theirMessages)
-    // }
-    // getTheirMessages()
 
-    // console.log(myMessages, "THESE ARE MY CHATS")
-    // console.log(theirMessages, "THESE ARE THEIR CHATS")
+    let expirationDate = new Date(matchInfo.matchInfo.expiration)
+    let expiration = Math.floor((expirationDate - Date.now()) / (24*60*60*1000))
 
 console.log(messages, "ALL MESSAGES")
 
@@ -60,10 +50,14 @@ console.log(messages)
                         <MessageCard message={message} theirProfile={matchInfo.theirProfile} myProfile={matchInfo.myProfile}/>
                     ))}
                 </div>
+                {expiration > 0 ?
                 <form onSubmit={handleAddMessage}>
                     <textarea onChange={handleChange} name="content" value={messageData.content} placeholder="Type your message..." className="chat-textarea" cols="50" rows="2"></textarea>
                     <button>SEND</button>
                 </form>
+                :
+                ""
+            }
             </div>
         </div>
     )

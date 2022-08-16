@@ -20,10 +20,13 @@ export default function MyMatchCard({ matchInfo, matchId, setMatchInfo }) {
             {expiration > 1 ? 
             <h2>{expiration} days left</h2>
             :
-            expiration = 1 ?
+            expiration === 1 ?
             <h2 className="Red-Text">{expiration} day left</h2>
             :
-            <h2>Times Up!</h2>
+            expiration <= 1 ?
+            <h2 className="Red-Text">Times Up!</h2>
+            :
+            ""
             }
             <div className="myProfile">
                 <label className="you">You</label>
