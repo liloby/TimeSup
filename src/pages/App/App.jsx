@@ -76,6 +76,7 @@ export default function App() {
                 path="/match/:matchId"
                 element={
                 <MatchDetailPage 
+                currentProfile={currentProfile}
                 />
               }
               />

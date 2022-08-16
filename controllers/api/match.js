@@ -6,6 +6,7 @@ module.exports = {
     create,
     findMatch,
     findMatchProfile,
+    detail
 }
 
 async function index(req, res) {
@@ -29,5 +30,14 @@ async function findMatchProfile(req, res) {
     const profile = await Profile.findOne({user: req.user._id})
     // console.log(profile,"THIS IS MY OWN PROFILE")
     const matchedProfiles = await Profile.find({"profileMatches.name": profile.displayName})
+    console.log("THIS IS PREVIOUS MATCHES", matchedProfiles)
     res.json(matchedProfiles)
+}
+
+async function detail(req, res) {
+    const match = await Match.findOne({_id: req.body.matchId})
+    const myProfile = await Profile.findOne({user: req.user._id})
+    const filteredProfiles = await Profile.find({"profileMatches.name": myProfile.displayName})
+    console.log(match, "THIS IS THE MATCH")
+    res.json({match, myProfile, filteredProfiles})
 }

@@ -1,0 +1,27 @@
+.Profile-img {
+    height: 70px;
+    width: 70px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.MyMatchCard-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.myProfile, .theirProfile {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.they {
+    color: #AA4949;
+    font-size: 1.3rem;
+}

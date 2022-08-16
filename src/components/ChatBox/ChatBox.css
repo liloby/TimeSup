@@ -1,0 +1,53 @@
+.outer-chatbox {
+    height: 40rem;
+    border: 2px solid #92D1CD;
+    border-radius: 20px;
+    margin: 3rem;
+    box-shadow: 3px 4px 8px rgb(79 153 161 / 40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(233, 252, 255, 0.5), rgba(238, 255, 255, 0.5));
+}
+
+.inner-chatbox {
+    height: 95%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.messages {
+    overflow-y: auto;
+}
+
+.chat-textarea {
+    width: 95%;
+    font-size: 1.5rem;
+    resize:none;
+    box-shadow: 3px 4px 8px rgb(79 153 161 / 40%);
+    padding-left: 1rem;
+}
+
+.inner-chatbox form {
+    display: flex;
+    justify-content: center;
+}
+
+.inner-chatbox form button {
+    width: 20%;
+    border: none;
+    background: rgb(0, 206, 179);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    margin-left: .5rem;
+    cursor: pointer;
+    box-shadow: 3px 4px 8px rgb(79 153 161 / 40%);
+}
+
+.inner-chatbox form button:hover {
+    opacity: 50%;
+}

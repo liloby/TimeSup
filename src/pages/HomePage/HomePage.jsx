@@ -19,9 +19,6 @@ export default function HomePage({
   const [masterProfileItems ,setMasterProfileItems] = useState([])
   const [theirProfiles, setTheirProfiles] = useState([])
 
-  console.log(myMatches, "MY MATCHES FKJDSLKFJLDSKJFS")
-  console.log(matchedProfiles, "MY MATCHES PROFILESSSSSSS")
-
   useEffect(
     function () {
         // Obtain current logged in User's Profile
@@ -55,7 +52,6 @@ export default function HomePage({
     [user]
   );
 
-console.log(theirProfiles, "NOT MY PROFILESSSS")
 
   useEffect(function () {
         //   Obtain the current profile's matches Profile
@@ -75,8 +71,10 @@ console.log(theirProfiles, "NOT MY PROFILESSSS")
   function handleRandom() {
     if (currentProfile) {
       if (profileItems.length > 1) {
+        const filterMeOut = profileItems.filter(item => item.displayName !== currentProfile.displayName)
+        console.log(filterMeOut, "NOT MEEEEEE")
         const randomMatch =
-          profileItems[Math.floor(Math.random() * profileItems.length)];
+          filterMeOut[Math.floor(Math.random() * filterMeOut.length)];
         setProfileItems(randomMatch);
       }
     }

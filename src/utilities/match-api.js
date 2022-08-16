@@ -17,3 +17,7 @@ export function findMatch() {
 export function getMatchProfile() {
     return sendRequest(`${BASE_URL}/matches/profiles`)
 }
+
+export function getMatch(matchData) {
+    return sendRequest(`${BASE_URL}/:id`, 'POST', matchData)
+}
