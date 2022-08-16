@@ -52,6 +52,7 @@ export default function HomePage({
     [user]
   );
 
+console.log(user, "USERR")
 
   useEffect(function () {
         //   Obtain the current profile's matches Profile

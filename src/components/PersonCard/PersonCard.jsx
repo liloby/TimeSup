@@ -30,13 +30,15 @@ export default function PersonCard({
 
   // This function is for updating like button status
   useEffect(function () {
-        if (user.profileCreated === true) {
+        if (currentProfile) {
             checkLikeFunc();
         }
   });
 
+
   async function checkLikeFunc() {
     const checkLike = await currentProfile.likes.some((like) => like.name.includes(person.displayName))
+    console.log(checkLike, "THIS IS CHECK LIKE")
     setCheckLike(checkLike);
   }
 
@@ -118,7 +120,7 @@ export default function PersonCard({
             className={
               checkLike
                 ? "Liked-Heart-btn"
-                : checkProfile || !currentProfile
+                : checkProfile || !currentProfile 
                 ? "Opague-Heart"
                 : "Heart-btn"
             }

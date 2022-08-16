@@ -108,6 +108,6 @@ grid-area: 1 / 9 / 2 / 12;
 
 .MatchCard a {
     text-decoration: none;
-    color: white;
+    color: rgb(255, 0, 0);
     font-size: 1.5rem;
 }

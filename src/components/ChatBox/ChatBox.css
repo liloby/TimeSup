@@ -22,6 +22,10 @@
     overflow-y: auto;
 }
 
+.messages::-webkit-scrollbar {
+    display: none;
+}
+
 .chat-textarea {
     width: 95%;
     font-size: 1.5rem;
