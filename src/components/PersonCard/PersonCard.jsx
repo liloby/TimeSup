@@ -12,7 +12,7 @@ export default function PersonCard({
   setMyMatches,
   setShowPopup,
   createdProfile,
-  user
+  user,
 }) {
   const [like, setLike] = useState(null);
   const [checkLike, setCheckLike] = useState(null);

@@ -55,7 +55,7 @@ export default function HomePage({
 
   useEffect(function () {
         //   Obtain the current profile's matches Profile
-        if (user.profileCreated === true) {
+        if (user.profileCreated === true && currentProfile) {
             async function getMatchesProfile() {
                 const myMatchesProfile = await matchAPI.getMatchProfile()
                 setMatchedProfiles(myMatchesProfile)

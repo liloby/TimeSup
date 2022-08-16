@@ -28,9 +28,10 @@ export default function LoginForm({ setUser}) {
   }
 
   return (
-    <div>
+    <div className="OuterLogin">
       <div className="form-container">
         <form onSubmit={handleSubmit}>
+          <h1>LOG IN</h1>
           <label>Email</label>
           <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
           <label>Password</label>

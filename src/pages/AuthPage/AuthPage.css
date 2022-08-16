@@ -1,0 +1,99 @@
+.login-nav {
+    justify-content: space-around;
+}
+
+.login-wrapper {
+    margin: 5rem 10rem 5rem 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.login-wrapper .OuterLogin {
+    height: 100%;
+    width: 50%;
+    border: 2px solid #92D1CD;
+    border-radius: 20px;
+    box-shadow: 3px 4px 8px rgb(79 153 161 / 40%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(233, 252, 255, 0.5), rgba(238, 255, 255, 0.5));
+}
+
+.login-wrapper div .form-container form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: .7rem;
+}
+
+.login-wrapper div .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-wrapper div .form-container form button {
+    margin: 2.5rem 6rem 0 6rem;
+    padding: 1rem;
+    border: none;
+    background: rgb(0, 206, 179);
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.3rem;
+    box-shadow: 3px 4px 8px rgba(79, 153, 161, 0.401);
+}
+
+.login-wrapper div .form-container form button:hover {
+    opacity: 50%;
+} 
+
+.login-wrapper div .form-container form h1 {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    background: rgb(0, 206, 179);
+    border: 2px solid rgb(0, 206, 179);
+    border-radius: 5px;
+    color: white;
+    width: 40%;
+    padding: 1rem;
+    transform: translate(-10%, -50%);
+}
+
+.sign-up {
+    border: 2px solid #92D1CD;
+    border-radius: 20px;
+    box-shadow: 3px 4px 8px rgb(79 153 161 / 40%);
+    height: 90%;
+    background: linear-gradient(180deg, rgba(233, 252, 255, 0.5), rgba(238, 255, 255, 0.5));
+}
+
+.sign-up form button {
+    display: flex;
+    width: 39%;
+    align-items: center;
+    transform: translate(0%, -50%);
+}
+
+.sign-up form {
+    padding: 0 5rem ;
+}
+
+.change-auth-button {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 2rem;
+    padding-right: 1.8rem;
+    cursor: pointer;
+}
+
+.change-auth-button:hover {
+    opacity: 50%;
+}

@@ -10,7 +10,7 @@
     background: linear-gradient(180deg, rgba(237, 123, 142, .9), rgba(200, 200, 200, .9)) ;
     margin-top: -239px;  
     margin-left: -194px;
-    animation: fade 1.5s linear forwards;
+    animation: fade 1.2s linear forwards;
 }
 
 .HidePopup {
