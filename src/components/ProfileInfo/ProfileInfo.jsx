@@ -3,9 +3,8 @@ import "./ProfileInfo.css";
 export default function ProfileInfo({ currentProfile, updating, deleting }) {
   return (
     <div className="ProfileInfo">
-      <button onClick={updating}>Edit Profile</button>
-      <button onClick={deleting}>Delete Profile</button>
-      <h2>Current Displayed Profile</h2>
+      <button className="edit-profile" onClick={updating}>Edit Profile</button>
+      <button className="delete-profile" onClick={deleting}>Delete Profile</button>
       <div className="ProfileInfo-Wrapper">
         <div>
           <img className="Profile-image" width="500px" src={currentProfile.image} alt="" />

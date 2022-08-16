@@ -44,9 +44,9 @@ console.log(expiration, "EXPIRATION IN DAYS")
         </div>
         <h3>{match.displayName}</h3>
         <ExpirationDays expiration={expiration}/>
-        <div className="delete-btn">
+        {/* <div className="delete-btn">
         <button>Delete</button>
-        </div>
+        </div> */}
         </Link>
         :
         ""

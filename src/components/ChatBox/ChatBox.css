@@ -37,6 +37,7 @@
 .inner-chatbox form {
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
 }
 
 .inner-chatbox form button {

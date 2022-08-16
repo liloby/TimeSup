@@ -47,7 +47,7 @@ console.log(messages)
             <div className="inner-chatbox">
                 <div className="messages">
                     {messages.map((message, idx) => (
-                        <MessageCard message={message} theirProfile={matchInfo.theirProfile} myProfile={matchInfo.myProfile}/>
+                        <MessageCard message={message} theirProfile={matchInfo.theirProfile} myProfile={matchInfo.myProfile} />
                     ))}
                 </div>
                 {expiration > 0 ?

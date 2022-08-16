@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const profileCtrl = require('../../controllers/api/profile')
+const ensureLoggedIn = require('../../config/ensureLoggedIn')
 
 router.get('/', profileCtrl.index)
 router.get('/profile', profileCtrl.getCurrentProfile)

@@ -30,3 +30,24 @@
     margin: 0 auto;
     padding: 0;
 }
+
+.edit-profile, .delete-profile {
+    background: rgb(0, 206, 179);
+    padding: 0.5rem;
+    cursor: pointer;
+    margin: .5rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    color: white;
+    font-style: italic;
+    border: none;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.225);
+}
+
+.edit-profile:hover, .delete-profile:hover {
+    opacity: 50%;
+} 
+
+.delete-profile:hover {
+    color: red;
+}
