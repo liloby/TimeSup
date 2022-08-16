@@ -21,3 +21,7 @@ export function getMatchProfile() {
 export function getMatch(matchData) {
     return sendRequest(`${BASE_URL}/:id`, 'POST', matchData)
 }
+
+export function newMessage(messageData) {
+    return sendRequest(`${BASE_URL}/message/new`, 'POST', messageData)
+}

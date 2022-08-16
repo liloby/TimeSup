@@ -29,7 +29,7 @@ console.log(matchInfo, "MATCH INFOOOOOOOOO")
     return (
         <div>
             {matchInfo.matchInfo && matchInfo.myProfile && matchInfo.theirProfile ? 
-            <MyMatchCard matchInfo={matchInfo} />
+            <MyMatchCard matchInfo={matchInfo} matchId={matchId} setMatchInfo={setMatchInfo} />
             :
             <h1>No Data</h1>
             }

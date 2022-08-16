@@ -1,0 +1,52 @@
+.me {
+    color: green;
+    text-align: right;
+}
+
+.them {
+    color: blue
+}
+
+.myAvatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.MyMessages-wrapper {
+    display: flex; 
+    justify-content: flex-end;
+    gap: 2rem;
+    align-items: center;
+}
+
+.MyMessages-wrapper p {
+    background-color: rgb(44, 244, 162);
+    border-radius: 2rem;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.theirAvatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.TheirMessages-wrapper {
+    display: flex; 
+    justify-content: flex-start;
+    gap: 2rem;
+    align-items: center;
+}
+
+.TheirMessages-wrapper p {
+    background-color: rgb(44, 244, 234);
+    border-radius: 2rem;
+    padding: 1rem;
+    font-size: 1rem;
+}

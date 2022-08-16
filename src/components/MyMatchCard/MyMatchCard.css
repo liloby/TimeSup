@@ -1,6 +1,6 @@
 .Profile-img {
-    height: 70px;
-    width: 70px;
+    height: 8rem;
+    width: 8rem;
     background-size: cover;
     background-position: center;
     border: 1px solid white;
@@ -24,4 +24,8 @@
 .they {
     color: #AA4949;
     font-size: 1.3rem;
+}
+
+.Red-Text {
+    color: red;
 }
