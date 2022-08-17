@@ -38,7 +38,7 @@ Disclaimer: The celebrities profiles in this app are for demonstrations purposes
 #### Future Updates:
 1. Mobile Friendly
 2. More sorting features(location, recently joined...etc)
-3. Add emoji/gifs to chat box
+3. Add emojis/gifs to chat box
 4. More uploading features(images, audio, and video)
 
 ##### Technogoly Used:
