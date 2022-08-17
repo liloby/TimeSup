@@ -39,7 +39,7 @@ Disclaimer: The celebrities profiles in this app are for demonstrations purposes
 4. More uploading features(images, audio, and video)
 
 ##### Technogoly Used:
-    REACT, Node.js, REACT Javascript, Mongoose, Mongodb, Mongo Atlas, and Express, FETCH API
+    REACT.js, Node.js, Mongoose, Mongodb, Mongo Atlas, and Express, FETCH API, JavaScript Web Tokens
     HTML, CSS, Javascript
     Git/Github- Version Control
     Heroku- Project Deployment
