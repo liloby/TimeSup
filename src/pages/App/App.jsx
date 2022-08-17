@@ -26,7 +26,7 @@ export default function App() {
           if (myCurrentProfile.displayName) {
             setCreatedProfile(true)
           }
-          console.log(myCurrentProfile, "MY CURRENT PROFILE");
+          // console.log(myCurrentProfile, "MY CURRENT PROFILE");
           setCurrentProfile(myCurrentProfile[0]);
         }
       }

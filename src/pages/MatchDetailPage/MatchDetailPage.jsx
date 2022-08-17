@@ -18,12 +18,12 @@ useEffect(function () {
         const match = await matchAPI.getMatch(matchData)
         const theirProfile = match.filteredProfiles.find(profile => profile.user === match.match.user1 ||  profile.user === match.match.user2 )
         setMatchInfo({myProfile: match.myProfile, theirProfile: theirProfile, matchInfo: match.match})
-        console.log(match, "THIS IS the MATCH ")
+        // console.log(match, "THIS IS the MATCH ")
     }
     getCurrentMatch()
 }, [])
 
-console.log(matchInfo, "MATCH INFOOOOOOOOO")
+// console.log(matchInfo, "MATCH INFOOOOOOOOO")
 
 
     return (

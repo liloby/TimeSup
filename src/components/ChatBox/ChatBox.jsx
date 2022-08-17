@@ -26,7 +26,7 @@ export default function ChatBox({ matchId , matchInfo, setMatchInfo }) {
     let expirationDate = new Date(matchInfo.matchInfo.expiration)
     let expiration = Math.floor((expirationDate - Date.now()) / (24*60*60*1000))
 
-console.log(messages, "ALL MESSAGES")
+// console.log(messages, "ALL MESSAGES")
 
     async function handleAddMessage(evt) {
         evt.preventDefault()
@@ -36,7 +36,7 @@ console.log(messages, "ALL MESSAGES")
         setMessages(messageInfo.match.chat)
     }
 
-console.log(messages)
+// console.log(messages)
 
     function handleChange(evt) {
         setMessageData({...messageData, [evt.target.name]: evt.target.value})

@@ -25,7 +25,7 @@ export default function HomePage({
       async function getCurrentProfile() {
         if (user.profileCreated === true && createdProfile === true) {
           const myCurrentProfile = await profileAPI.getCurrentProfile();
-          console.log(myCurrentProfile, "MY CURRENT PROFILE");
+          // console.log(myCurrentProfile, "MY CURRENT PROFILE");
           setCurrentProfile(myCurrentProfile[0]);
         }
       }
@@ -52,7 +52,7 @@ export default function HomePage({
     [user]
   );
 
-console.log(user, "USERR")
+// console.log(user, "USERR")
 
   useEffect(function () {
         //   Obtain the current profile's matches Profile
@@ -73,7 +73,7 @@ console.log(user, "USERR")
     if (currentProfile) {
       if (profileItems.length > 1) {
         const filterMeOut = profileItems.filter(item => item.displayName !== currentProfile.displayName)
-        console.log(filterMeOut, "NOT MEEEEEE")
+        // console.log(filterMeOut, "NOT MEEEEEE")
         const randomMatch =
           filterMeOut[Math.floor(Math.random() * filterMeOut.length)];
         setProfileItems(randomMatch);

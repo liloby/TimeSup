@@ -38,7 +38,7 @@ export default function PersonCard({
 
   async function checkLikeFunc() {
     const checkLike = await currentProfile.likes.some((like) => like.name.includes(person.displayName))
-    console.log(checkLike, "THIS IS CHECK LIKE")
+    // console.log(checkLike, "THIS IS CHECK LIKE")
     setCheckLike(checkLike);
   }
 
@@ -56,13 +56,13 @@ export default function PersonCard({
 
   async function getMatches() {
     const myMatches = await matchAPI.findMatch();
-    console.log(myMatches, "MY MATCHES FINALLY!!!!!!!");
+    // console.log(myMatches, "MY MATCHES FINALLY!!!!!!!");
     setMyMatches(myMatches)
   }
 
   async function getCurrentProfile() {
     const myCurrentProfile = await profileAPI.getCurrentProfile();
-    console.log(myCurrentProfile, "MY CURRENT PROFILE");
+    // console.log(myCurrentProfile, "MY CURRENT PROFILE");
     setCurrentProfile(myCurrentProfile[0]);
   }
 
@@ -74,10 +74,10 @@ export default function PersonCard({
       )
     ) {
       // && currentProfile.displayName !== person.displayName
-      console.log("LIKED PERSON's NAME", person.displayName);
+      // console.log("LIKED PERSON's NAME", person.displayName);
       const likedPerson = { name: person.displayName };
       const profileLiked = await createLikes(likedPerson);
-      console.log("profileLiked", profileLiked);
+      // console.log("profileLiked", profileLiked);
       handleMatch();
       getCurrentProfile();
     } else {
@@ -102,8 +102,8 @@ export default function PersonCard({
       const createdProfileMatch2 = await addMatch2(matchesNames);
       // setMatches([...matches, ])
       // Set State to show Matched Pair on Match Box
-      console.log("CREATED MATCH", createdMatch);
-      console.log("CREATED PROFILE MATCH ARRAY", createdProfileMatch);
+      // console.log("CREATED MATCH", createdMatch);
+      // console.log("CREATED PROFILE MATCH ARRAY", createdProfileMatch);
       getCurrentProfile();
       getMatches();
     }

@@ -3,7 +3,7 @@ import {useState} from 'react'
 import ChatBox from "../ChatBox/ChatBox"
 export default function MyMatchCard({ matchInfo, matchId, setMatchInfo }) {
 
-    console.log(matchInfo, "THIS IS MATCH INFO IN MATCHCARD")
+    // console.log(matchInfo, "THIS IS MATCH INFO IN MATCHCARD")
 
 
 

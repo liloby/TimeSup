@@ -2,7 +2,7 @@ import "./ExpirationDays.css"
 
 export default function ExpirationDays({expiration}) {
 
-    console.log(expiration, "EXPIRATION")
+    // console.log(expiration, "EXPIRATION")
     return (
         <>
         <div className={

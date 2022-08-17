@@ -28,13 +28,13 @@ async function create(req, res) {
     const profile = await Profile.create(req.body)
     const user = await User.findOneAndUpdate({_id: req.user._id}, {profileCreated: true})
     user.save()
-    console.log("Created profile Change user boolean to true", user)
+    // console.log("Created profile Change user boolean to true", user)
     res.json(profile)
 }
 
 async function addLike(req, res) {
     const profile = await Profile.find({user: req.user._id})
-    console.log("YOU'RE HERE ATLEAST")
+    // console.log("YOU'RE HERE ATLEAST")
     profile[0].likes.push(req.body)
     profile[0].save()
     res.json(profile)
@@ -53,7 +53,7 @@ async function deleteProfile(req, res) {
 }
 
 async function addMatch(req, res) {
-    console.log("REQ BODY DISPLAY NAME", req.body.displayName)
+    // console.log("REQ BODY DISPLAY NAME", req.body.displayName)
     const profile = await Profile.find({user: req.user._id})
     profile[0].profileMatches.push({name: req.body.displayName, avatar: req.body.image})
     profile[0].save()
@@ -62,9 +62,9 @@ async function addMatch(req, res) {
 
 async function addMatch2(req, res) {
     const profile1 = await Profile.find({user: req.user._id})
-    console.log(profile1, "PROFILE1 INFO!!!!!!!!!!!!!")
+    // console.log(profile1, "PROFILE1 INFO!!!!!!!!!!!!!")
     const profile2 = await Profile.find(req.body)
-    console.log("THIS IS FOUND PROFILE 2", profile2)
+    // console.log("THIS IS FOUND PROFILE 2", profile2)
     profile2[0].profileMatches.push({name: profile1[0].displayName, avatar: profile1[0].image})
     profile2[0].save()
     res.json(profile2)

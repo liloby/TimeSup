@@ -16,7 +16,7 @@ export default function EditProfileForm({user, currentProfile}) {
     async function handleAddProfile(evt) {
         const updatedFormData = {...formData, user: user._id}
         const profile = await updateProfile(updatedFormData)
-        console.log(profile)
+        // console.log(profile)
     }
 
     function handleChange(evt) {

@@ -12,12 +12,12 @@ export default function ProfilePage({user, addProfile, currentProfile, setCurren
 
     function updating() {
         setUpdateProfile(true)
-        console.log("After clicking",updateProfile)
+        // console.log("After clicking",updateProfile)
     }
 
     function deleting() {
         setDeleteProfile(true)
-        console.log("After clicking delete button", deleteProfile)
+        // console.log("After clicking delete button", deleteProfile)
     }
 
     let userName = user.name.charAt(0).toUpperCase() + user.name.slice(1)

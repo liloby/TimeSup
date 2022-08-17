@@ -8,7 +8,7 @@ export default function MatchBox({ currentProfile, user, matchedProfiles, myMatc
     const [matches, setMatches] = useState([])
     const [sortMatches, setSortMatches] = useState([])
 
-console.log(matchedProfiles, "MATCHED PROFILES AT MATCHBOX")
+// console.log(matchedProfiles, "MATCHED PROFILES AT MATCHBOX")
 
     useEffect(function() {
         async function checkCurrentProfile() {
@@ -24,7 +24,7 @@ console.log(matchedProfiles, "MATCHED PROFILES AT MATCHBOX")
         checkCurrentProfile()
     }, [matches, user, currentProfile])
 
-console.log(myMatches, "my current matches")
+// console.log(myMatches, "my current matches")
 
 
     return (
