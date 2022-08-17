@@ -32,6 +32,9 @@ Disclaimer: The celebrities profiles in this app are for demonstrations purposes
 ##### Chat Page
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/72634228/184870988-a34e231d-ab26-4ccb-b271-b02f063c525f.png">
 
+#### Unsolved Problem:
+1. Applying liking functionality on the random match component.
+
 #### Future Updates:
 1. Mobile Friendly
 2. More sorting features(location, recently joined...etc)
