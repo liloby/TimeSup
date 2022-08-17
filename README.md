@@ -1,6 +1,6 @@
 ## TimeSup Dating App
 
-#### TimeSup is a Dating App that has an expiration time on every match. It allows users to chat and connect. With a timer set on every match, it may result in users connecting more efficiently. The app also allow users who are no longer interested in each other to just let it expire without having to worry about blocking or ignoring each other which result in some sort of closure for some users.
+#### TimeSup is a Dating App that has an expiration time on every match. It allows users to browse, chat, and connect. With a timer set on every match, it may result in users connecting more efficiently. The app also allow users who are no longer interested in each other to just let it expire without having to worry about blocking or ignoring each other which result in some sort of closure for some users.
 
 #### Click Link to Start - https://timesupdateapp.herokuapp.com/
 Disclaimer: The celebrities profiles in this app are for demonstrations purposes only. They are not real!
