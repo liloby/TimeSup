@@ -36,7 +36,7 @@ Disclaimer: The celebrities profiles in this app are for demonstrations purposes
 1. Applying liking functionality on the random match component.
 
 #### Future Updates:
-1. Mobile Friendly
+1. Mobile Friendly(updated)
 2. More sorting/filtering features(location, recently joined...etc)
 3. Add emojis/gifs to chat
 4. More uploading features(images, audio, and video)
