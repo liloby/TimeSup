@@ -24,3 +24,26 @@
     grid-area: 1 / 8 / 11 / 11; 
     margin: 1rem;
 }
+
+@media only screen and (max-width: 980px) {
+    .MatchBox {
+        grid-area: 1 / 7 / 11 / 11;
+    }
+    .ExploreAll {
+        grid-area: 2 / 1 / 11 / 7;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .SearchBar {
+        grid-area: 1 / 1 / 2 / 11;
+        padding: 0;
+    }
+    .MatchBox {
+        grid-area: 2 / 7 / 11 / 11;
+        margin: 0;
+    }
+    .ExploreAll {
+        grid-area: 2 / 1 / 11 / 7;
+    }
+}

@@ -17,3 +17,14 @@
     box-shadow: 4px 4px 5px rgba(234, 187, 187, 0.502); */
 }
 
+@media only screen and (max-width: 780px) {
+    .MatchBox h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .MatchBox h1 {
+        font-size: 1rem;
+    }
+}

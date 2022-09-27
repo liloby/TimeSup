@@ -5,3 +5,8 @@
   box-shadow: 3px 4px 8px rgba(79, 153, 161, 0.401);
 }
 
+@media only screen and (max-width: 800px) {
+    .Page-Wrapper {
+      margin: 0;
+    }
+}

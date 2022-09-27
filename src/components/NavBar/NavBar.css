@@ -61,3 +61,16 @@ a:hover {
       transform: scale(1.1);
     }
   }
+
+  @media only screen and (max-width: 450px) {
+    .T {
+        font-size: 2rem;
+    }
+    .Logo {
+        height: 3rem;
+        width: 3rem;
+    }
+    nav a {
+        font-size: 1.2rem;
+    }
+  }

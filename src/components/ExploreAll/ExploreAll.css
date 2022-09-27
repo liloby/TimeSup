@@ -47,8 +47,19 @@ h1 {
     }
   }
   
-  @media only screen and (max-width: 875px) {
+@media only screen and (max-width: 875px) {
     .ExploreAll-items {
-      grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
-  }
+}
+
+@media only screen and (max-width: 500px) {
+    .ExploreAll-items {
+        padding: 0;
+        margin: 0 auto;
+    }
+    .Match {
+        margin: 0;
+        padding: 0;
+    }
+}

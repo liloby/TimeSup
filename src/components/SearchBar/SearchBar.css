@@ -60,3 +60,14 @@ font-style: italic;
         font-size: 1rem;
     }
 }
+
+@media only screen and (max-width: 500px) {
+    .SearchBar-items .filter {
+        margin: 0 auto;
+    }
+    .filter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

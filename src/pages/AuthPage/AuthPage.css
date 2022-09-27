@@ -97,3 +97,24 @@
 .change-auth-button:hover {
     opacity: 50%;
 }
+
+@media only screen and (max-width: 1215px) {
+    .login-wrapper .OuterLogin {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 857px) {
+    .login-wrapper {
+        margin: 5rem 2rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .login-wrapper div .form-container form {
+        width: 100%
+    }
+    .login-wrapper div .form-container form button {
+        margin: 2rem;
+    }
+}
