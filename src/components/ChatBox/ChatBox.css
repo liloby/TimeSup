@@ -56,3 +56,12 @@
 .inner-chatbox form button:hover {
     opacity: 50%;
 }
+
+@media only screen and (max-width: 515px) {
+    .outer-chatbox {
+        margin: .5rem;
+    }
+    .inner-chatbox form button {
+        width: 30%;
+    }
+}
