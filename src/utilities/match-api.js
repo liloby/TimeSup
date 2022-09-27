@@ -18,6 +18,7 @@ export function getMatchProfile() {
     return sendRequest(`${BASE_URL}/matches/profiles`)
 }
 
+// uses useParams hook to retrieve the current's page matchId
 export function getMatch(matchData) {
     return sendRequest(`${BASE_URL}/:id`, 'POST', matchData)
 }

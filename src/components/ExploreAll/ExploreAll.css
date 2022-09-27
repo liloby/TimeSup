@@ -40,3 +40,15 @@ h1 {
     margin: 0 3rem 1rem 3rem;
     text-shadow: 2px 2px 5px #00000050;
 }
+
+@media only screen and (max-width: 1200px) {
+    .ExploreAll-items {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media only screen and (max-width: 875px) {
+    .ExploreAll-items {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }

@@ -34,10 +34,15 @@ async function findMatchProfile(req, res) {
     res.json(matchedProfiles)
 }
 
+// THIS IS MY FAVOITE AND MOST HANDY RETRIEVING BIG CHUNK OF INFO
 async function detail(req, res) {
+    // FIND THE MATCH BY PASSING DOWN THE MATCH ID USING USEPARAMS
     const match = await Match.findOne({_id: req.body.matchId})
+    // THIS LOOK FOR MY PROFILE USING THE REFERENCED CURRENT LOGGED IN USER ID
     const myProfile = await Profile.findOne({user: req.user._id})
+    // THIS FILTERS OUT MY MATCHES' PROFILES
     const filteredProfiles = await Profile.find({"profileMatches.name": myProfile.displayName})
+    // WHICH SENDS OUT A BUNK CHUCK OF INFO THAT I CAN DESTRUCTURE AND USE IT HOWEVER I LIKE
     res.json({match, myProfile, filteredProfiles})
 }
 
