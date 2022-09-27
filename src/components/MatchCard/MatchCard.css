@@ -111,3 +111,16 @@ grid-area: 1 / 9 / 2 / 12;
     color: rgb(255, 0, 0);
     font-size: 1.5rem;
 }
+
+@media only screen and (max-width: 683px) {
+    .MatchCard a .avatar-img, .expired .avatar-img-expired {
+        height: 40px;
+        width: 40px;
+    }
+    .expired h3, a h3 {
+        font-size: 1.1rem;
+    }
+    .MatchCard .expired {
+        height: 3.3rem;
+    }
+}
