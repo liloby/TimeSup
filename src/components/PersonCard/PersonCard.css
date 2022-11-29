@@ -8,7 +8,7 @@
     width: 100%;
     overflow-y: scroll;
     background-size: cover;
-    background-position: center;
+    background-position: 50% 10%;
     border-radius: 20px;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);;
 }

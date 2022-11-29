@@ -1,7 +1,7 @@
 .MatchCard a .avatar-img {
     height: 70px;
     width: 70px;
-    background-position: center;
+    background-position: 50% 10%;
     background-size: cover;
     border: 1px solid white;
     border-radius: 50%;
