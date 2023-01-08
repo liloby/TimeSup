@@ -1,7 +1,9 @@
 import "./ChatBox.css"
 import { useRef, useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import * as matchAPI from "../../utilities/match-api";
 import MessageCard from "../MessageCard/MessageCard"
+import socket from '../../utilities/socket'
 
 const initState = {
     content: '',
@@ -13,6 +15,8 @@ export default function ChatBox({ matchId , matchInfo, setMatchInfo }) {
     const [myMessages, setMyMessages] = useState([])
     const [theirMessages, setTheirMessages] = useState([])
 
+    const { messageId } = useParams();
+
     useEffect(function () {
         async function getCurrentMatch() {
             const matchData = {matchId}
@@ -21,6 +25,7 @@ export default function ChatBox({ matchId , matchInfo, setMatchInfo }) {
             setMatchInfo({myProfile: match.myProfile, theirProfile: theirProfile, matchInfo: match.match})
         }
         getCurrentMatch()
+        socket.emit('newMessage', messageId)
     }, [])
 
     let expirationDate = new Date(matchInfo.matchInfo.expiration)
@@ -28,12 +33,18 @@ export default function ChatBox({ matchId , matchInfo, setMatchInfo }) {
 
 // console.log(messages, "ALL MESSAGES")
 
+    // Socket Message Listener
+    socket.on('update-message', function(data) {
+        setMessages(data)
+    })
+
     async function handleAddMessage(evt) {
         evt.preventDefault()
         const updatedMessage = {content: messageData.content, matchId}
         const messageInfo = await matchAPI.newMessage(updatedMessage)
         setMessageData(initState)
         setMessages(messageInfo.match.chat)
+        socket.emit('messages', messageInfo.match.chat)
     }
 
 // console.log(messages)

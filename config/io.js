@@ -9,10 +9,17 @@ function init(http) {
     io = require('socket.io')(http);
 
     io.on('connection', function(socket) {
-        console.log('Client socketed connected');
+        console.log('Client is connected to socket');
 
-        // Other message listeners below here (stay inside of this 'connection')
+        // Other message listeners below here (stay inside of this 'connection' callback)
 
+        socket.on('newMessage', function(messageId) {
+            socket.join(messageId)
+        })
+
+        socket.on('messages', function(data) {
+            socket.to(data._id).emit('update-message', data)
+        })
 
     });
 }
