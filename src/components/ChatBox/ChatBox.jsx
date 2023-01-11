@@ -23,7 +23,7 @@ export default function ChatBox({ matchId , matchInfo, setMatchInfo }) {
             setMatchInfo({myProfile: match.myProfile, theirProfile: theirProfile, matchInfo: match.match})
         }
         getCurrentMatch()
-        socket.on('add-message', function(data) {
+        socket.on('update-message', function(data) {
             console.log(data)
         })
     }, [])
