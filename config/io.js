@@ -13,8 +13,8 @@ function init(http) {
 
         // Other message listeners below here (stay inside of this 'connection' callback)
 
-        socket.on('add-message', function() {
-            io.emit('add-message')
+        socket.on('add-message', function(data) {
+            io.emit('add-message', data)
         })
 
     });

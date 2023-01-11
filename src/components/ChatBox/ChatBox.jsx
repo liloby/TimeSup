@@ -23,8 +23,8 @@ export default function ChatBox({ matchId , matchInfo, setMatchInfo }) {
             setMatchInfo({myProfile: match.myProfile, theirProfile: theirProfile, matchInfo: match.match})
         }
         getCurrentMatch()
-        socket.on('add-message', function() {
-            console.log("Hello")
+        socket.on('add-message', function(data) {
+            console.log(data)
         })
     }, [])
 
@@ -39,7 +39,7 @@ export default function ChatBox({ matchId , matchInfo, setMatchInfo }) {
         const messageInfo = await matchAPI.newMessage(updatedMessage)
         setMessageData(initState)
         setMessages(messageInfo.match.chat)
-        socket.emit('add-message')
+        socket.emit('add-message', messageInfo.match.chat)
     }
 
 // console.log(messages)
