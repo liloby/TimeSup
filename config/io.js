@@ -13,12 +13,8 @@ function init(http) {
 
         // Other message listeners below here (stay inside of this 'connection' callback)
 
-        socket.on('newMessage', function(messageId) {
-            socket.join(messageId)
-        })
-
-        socket.on('messages', function(data) {
-            socket.to(data._id).emit('update-message', data)
+        socket.on('add-message', function() {
+            io.emit('add-message')
         })
 
     });
