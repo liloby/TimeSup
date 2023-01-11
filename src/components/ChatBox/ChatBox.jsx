@@ -27,6 +27,7 @@ export default function ChatBox({ matchId , matchInfo, setMatchInfo }) {
     
     socket.on('update-message', function(data) {
         console.log(data)
+        setMessages(data)
     })
     
     let expirationDate = new Date(matchInfo.matchInfo.expiration)
