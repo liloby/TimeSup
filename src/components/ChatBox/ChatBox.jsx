@@ -23,11 +23,12 @@ export default function ChatBox({ matchId , matchInfo, setMatchInfo }) {
             setMatchInfo({myProfile: match.myProfile, theirProfile: theirProfile, matchInfo: match.match})
         }
         getCurrentMatch()
-        socket.on('update-message', function(data) {
-            console.log(data)
-        })
     }, [])
-
+    
+    socket.on('update-message', function(data) {
+        console.log(data)
+    })
+    
     let expirationDate = new Date(matchInfo.matchInfo.expiration)
     let expiration = Math.floor((expirationDate - Date.now()) / (24*60*60*1000))
 
