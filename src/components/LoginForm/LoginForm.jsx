@@ -1,3 +1,4 @@
+import './LoginForm.css'
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
 
@@ -27,6 +28,11 @@ export default function LoginForm({ setUser}) {
     }
   }
 
+  // Logs in to test account
+  function demo() {
+    setCredentials({email: 'Test1@gmail.com', password: 'test123'})
+  }
+
   return (
     <div className="OuterLogin">
       <div className="form-container">
@@ -37,6 +43,7 @@ export default function LoginForm({ setUser}) {
           <label>Password</label>
           <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
           <button type="submit">LOG IN</button>
+          <button className="demo-btn" onClick={demo}>Demo</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>
